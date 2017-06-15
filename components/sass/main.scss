@@ -8,14 +8,41 @@
 @font-face{font-family:'TheinBoldIta';src:url("../fonts/Theinhardt-BoldIta.otf")}
 
 $tan: #f7e5d6;
+$myblue: #0C3CB5;
+$mywhite: #FCFCFC;
 
 body {
   background-color: $tan;
+  font-family: 'TheinReg';
+}
+
+#container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+#years {
+  ul {
+    display: flex;
+    list-style-type: none;
+    font-family: 'TheinMed';
+    color: $mywhite;
+    margin: 0;
+    padding: 0 0 0 50px;
+    flex: 100%;
+    li {
+      display: inline;
+      background-color: $myblue;
+      padding: 20px 10px;
+      margin: 0 5px;
+    }
+  }
 }
 
 h1 {
   font-family: 'Playfair Display', serif;
-  color: #fafafb;
+  color: $myblue;
+  flex: 100%;
 }
 p {
   font-family: 'TheinReg';

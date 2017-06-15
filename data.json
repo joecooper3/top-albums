@@ -1,0 +1,51 @@
+{
+    "info":[{
+            "year":"2016",
+            "rank":1,
+            "artist":"Car Seat Headrest",
+            "album":"Teens of Denial",
+            "image":"teens-of-denial",
+            "genres":"Indie Rock"
+        },
+        {
+          "year":"2016",
+          "rank":2,
+          "artist":"Frank Ocean",
+          "album":"Blonde",
+          "image":"blonde",
+          "genres":"Alternative R&B, Neo-Soul"
+        },
+        {
+          "year":"2016",
+          "rank":3,
+          "artist":"Kamaiyah",
+          "album":"A Good Night in the Ghetto",
+          "image":"a-good-night-in-the-ghetto",
+          "genres":"West Coast Hip Hop"
+        },
+        {
+          "year":"2015",
+          "rank":1,
+          "artist":"Young Thug",
+          "album":"Barter 6",
+          "image":"barter-6",
+          "genres":"Trap Rap, Southern Hip Hop"
+        },
+        {
+        "year":"2015",
+        "rank":2,
+        "artist":"Lil Ugly Mane",
+        "album":"Third Side of Tape",
+        "image":"third-side-of-tape",
+        "genres":"Experimental Hip Hop, Instrumental Hip Hop"
+        },
+        {
+        "year":"2015",
+        "rank":3,
+        "artist":"The Coneheads",
+        "album":"L​.​P​.​1.: 14 Year Old High School PC​-​Fascist Hype Lords Rip Off Devo for the Sake of Extorting $​$​$ From Helpless Impressionable Midwestern Internet Peoplepunks L​.​P​.",
+        "image":"lp1",
+        "genres":"Post-Punk"
+        }
+    ]
+}

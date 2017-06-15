@@ -6,8 +6,8 @@ var gulp = require('gulp'),
     concat = require('gulp-concat');
 
 var jsSources = 'components/js/*.js';
-
 var sassSources = 'components/sass/*.scss';
+var coffeeSources = 'components/coffee/*.coffee';
 
 gulp.task('js', function() {
   gulp.src(jsSources)
@@ -23,9 +23,17 @@ gulp.task('sass',function() {
   .pipe(gulp.dest('./css/'));
 });
 
-gulp.task('watch', function () {
-  gulp.watch(jsSources, ['js'])
-  gulp.watch(sassSources, ['sass'])
+gulp.task('coffee', function() {
+  gulp.src(coffeeSources)
+    .pipe(coffee({bare: true})
+      .on('error', gutil.log))
+    .pipe(gulp.dest('./components/js/'));
 });
 
-gulp.task('default', ['sass','js','watch']);
+gulp.task('watch', function () {
+  gulp.watch(jsSources, ['js']);
+  gulp.watch(coffeeSources, ['coffee']);
+  gulp.watch(sassSources, ['sass']);
+});
+
+gulp.task('default', ['sass','js','coffee', 'watch']);
