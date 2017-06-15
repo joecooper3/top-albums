@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'TheinMed';
+  src: url("../fonts/Theinhardt-Medium.otf"); }
+
+@font-face {
+  font-family: 'TheinReg';
+  src: url("../fonts/Theinhardt-Regular.otf"); }
+
+@font-face {
+  font-family: 'TheinRegIta';
+  src: url("../fonts/Theinhardt-RegularIta.otf"); }
+
+@font-face {
+  font-family: 'TheinThin';
+  src: url("../fonts/Theinhardt-Thin.otf"); }
+
+@font-face {
+  font-family: 'TheinLight';
+  src: url("../fonts/Theinhardt-Light.otf"); }
+
+@font-face {
+  font-family: 'TheinLightIta';
+  src: url("../fonts/Theinhardt-LightIta.otf"); }
+
+@font-face {
+  font-family: 'TheinBold';
+  src: url("../fonts/Theinhardt-Bold.otf"); }
+
+@font-face {
+  font-family: 'TheinBoldIta';
+  src: url("../fonts/Theinhardt-BoldIta.otf"); }
+
+body {
+  background-color: #f7e5d6; }
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  color: #fafafb; }
+
+p {
+  font-family: 'TheinReg'; }
