@@ -429,24 +429,54 @@ body {
   display: flex;
   flex-flow: row wrap; }
 
-#years ul {
+#years ul, #positions ul {
   display: flex;
   list-style-type: none;
   font-family: 'TheinMed';
   color: #FCFCFC;
   margin: 0;
-  padding: 0 0 0 50px;
   flex: 100%; }
-  #years ul li {
+  #years ul li, #positions ul li {
     display: inline;
     background-color: #0C3CB5;
-    padding: 20px 10px;
-    margin: 0 5px; }
+    transition: 0.3s;
+    cursor: pointer; }
+    #years ul li:hover, #positions ul li:hover {
+      background-color: #002b55; }
+
+#years {
+  flex: 100%; }
+  #years ul {
+    padding: 0 0 0 50px; }
+    #years ul li {
+      padding: 20px 10px;
+      margin: 0 5px; }
+
+#positions ul {
+  padding: 50px 0 0 0;
+  flex-flow: column nowrap; }
+  #positions ul li {
+    padding: 10px 20px;
+    margin: 5px; }
+
+#main-content {
+  margin: 0 0 0 150px; }
+
+#rank-number {
+  font-size: 100px;
+  font-family: 'Playfair Display', serif;
+  color: #0C3CB5; }
+
+#album-art img {
+  max-width: 600px; }
 
 h1 {
   font-family: 'Playfair Display', serif;
   color: #0C3CB5;
-  flex: 100%; }
+  margin: 50px 0; }
+  h1 .highlighting {
+    background-color: #FCFCFC;
+    padding: 20px 10px; }
 
 p {
   font-family: 'TheinReg'; }

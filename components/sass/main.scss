@@ -21,28 +21,72 @@ body {
   flex-flow: row wrap;
 }
 
-#years {
+#years, #positions {
   ul {
     display: flex;
     list-style-type: none;
     font-family: 'TheinMed';
     color: $mywhite;
     margin: 0;
-    padding: 0 0 0 50px;
     flex: 100%;
     li {
       display: inline;
       background-color: $myblue;
+      transition: 0.3s;
+      cursor: pointer;
+      &:hover {
+        background-color: #002b55;
+      }
+    }
+  }
+}
+
+#years {
+  flex: 100%;
+  ul {
+    padding: 0 0 0 50px;
+    li {
       padding: 20px 10px;
       margin: 0 5px;
     }
   }
 }
 
+#positions {
+  ul {
+    padding: 50px 0 0 0;
+    flex-flow: column nowrap;
+    li {
+      padding: 10px 20px;
+      margin: 5px;
+    }
+  }
+}
+
+#main-content {
+  margin: 0 0 0 150px;
+}
+
+#rank-number {
+  font-size: 100px;
+  font-family: 'Playfair Display', serif;
+  color: $myblue;
+}
+
+#album-art {
+  img {
+  max-width: 600px;
+}
+}
+
 h1 {
   font-family: 'Playfair Display', serif;
   color: $myblue;
-  flex: 100%;
+  margin: 50px 0;
+  .highlighting {
+    background-color: $mywhite;
+      padding: 20px 10px;
+  }
 }
 p {
   font-family: 'TheinReg';
