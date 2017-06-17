@@ -15,7 +15,15 @@ body {
   background-color: $tan;
   font-family: 'TheinReg';
 }
-
+#selected-year {
+  font-family: 'TheinBold';
+  font-size: 200px;
+  position: absolute;
+  z-index: -2;
+  color: #FCF0EF;
+  right: 0;
+  top: 50px;
+}
 #container {
   display: flex;
   flex-flow: row wrap;
@@ -58,7 +66,7 @@ body {
     flex-flow: column nowrap;
     li {
       padding: 10px 20px;
-      margin: 5px;
+      margin: 5px 0;
     }
   }
 }
