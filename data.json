@@ -105,6 +105,62 @@
       "genres": "Post-Punk"
     },
     {
+      "year": 2015,
+      "rank": 4,
+      "artist": "Titus Andronicus",
+      "album": "The Most Lamentable Tragedy",
+      "image": "the-most-lamentable-tragedy",
+      "genres": "Punk Rock, Indie Rock, Rock Opera"
+    },
+    {
+      "year": 2015,
+      "rank": 5,
+      "artist": "Oneohtrix Point Never",
+      "album": "Garden of Delete",
+      "image": "garden-of-delete",
+      "genres": "Progressive Electronic, Post-Industrial"
+    },
+    {
+      "year": 2015,
+      "rank": 6,
+      "artist": "Matana Roberts",
+      "album": "Coin Coin Chapter Three: River Run Thee ",
+      "image": "coin-coin-chapter-three",
+      "genres": "Experimental"
+    },
+    {
+      "year": 2015,
+      "rank": 7,
+      "artist": "Jefre Cantu-Ledesma",
+      "album": "A Year with 13 Moons",
+      "image": "a-year-with-13-moons",
+      "genres": "Ambient"
+    },
+    {
+      "year": 2015,
+      "rank": 8,
+      "artist": "Dawn Richard",
+      "album": "Blackheart",
+      "image": "blackheart",
+      "genres": "Alternative R&B"
+    },
+    {
+      "year": 2015,
+      "rank": 9,
+      "artist": "Domenique Dumont",
+      "album": "Comme ça",
+      "image": "comme-ca",
+      "genres": "Balearic Beat, Synthpop"
+    },
+    {
+      "year": 2015,
+      "rank": 10,
+      "artist": "Levon Vincent",
+      "album": "s/t",
+      "image": "levon-vincent",
+      "genres": "Deep House, Techno"
+    },
+    {
       "year": 2014,
       "rank": 1,
       "artist": "Grouper",
@@ -127,6 +183,62 @@
       "album": "Days Before Rodeo",
       "image": "days-before-rodeo",
       "genres": "Southern Hip Hop, Trap Rap"
+    },
+    {
+      "year": 2014,
+      "rank": 4,
+      "artist": "Kevin Gates",
+      "album": "By Any Means",
+      "image": "by-any-means",
+      "genres": "Trap Rap, Southern Hip Hop, Pop Rap"
+    },
+    {
+      "year": 2014,
+      "rank": 5,
+      "artist": "Various Artists",
+      "album": "We Invented the Bop",
+      "image": "we-invented-the-bop",
+      "genres": "Bop"
+    },
+    {
+      "year": 2014,
+      "rank": 6,
+      "artist": "G Herbo",
+      "album": "Welcome to Fazoland",
+      "image": "welcome-to-fazoland",
+      "genres": "Drill"
+    },
+    {
+      "year": 2014,
+      "rank": 7,
+      "artist": "clipping.",
+      "album": "CLPPNG",
+      "image": "clppng",
+      "genres": "Industrial Hip Hop, Experimental Hip Hop"
+    },
+    {
+      "year": 2014,
+      "rank": 8,
+      "artist": "Ratking",
+      "album": "So It Goes",
+      "image": "so-it-goes",
+      "genres": "East Coast Hip Hop, Abstract Hip Hop, Experimental Hip Hop"
+    },
+    {
+      "year": 2014,
+      "rank": 9,
+      "artist": "No Lands",
+      "album": "Negative Space",
+      "image": "negative-space",
+      "genres": "Art Rock"
+    },
+    {
+      "year": 2014,
+      "rank": 10,
+      "artist": "Chris Crack & TREE",
+      "album": "TreeSwag",
+      "image": "treeswag",
+      "genres": "Hip Hop"
     }
   ]
 }
