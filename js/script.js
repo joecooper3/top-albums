@@ -2,6 +2,12 @@
 
 function two(){return "chino amobi"};
 
+var currentPos, currentYear;
+
+currentYear = 2016;
+
+currentPos = 1;
+
 $.ajax({
   url: "data.json",
   dataType: "json",
@@ -9,26 +15,41 @@ $.ajax({
     return $('body').append("AJAX Error: " + textStatus);
   },
   success: function(data, textStatus, jqXHR) {
-    var i, j, len, ref, results, thing;
+    var Searcher;
     console.log("Successful AJAX call: " + data);
-    $('body').append(data.info[4].album);
-    ref = data.info;
-    results = [];
-    for (i = j = 0, len = ref.length; j < len; i = ++j) {
-      thing = ref[i];
-      $('#2016').click(function() {
-        var imagepath;
-        imagepath = '<img src="images/' + data.info[0].image + '.jpg">';
-        $('#album-art').html(imagepath);
-        return $('#name-and-artist').html(data.info[0].artist + ' &ndash; ' + data.info[0].album);
-      });
-      results.push($('#2015').click(function() {
-        var imagepath;
-        imagepath = '<img src="images/' + data.info[3].image + '.jpg">';
-        $('#album-art').html(imagepath);
-        return $('#name-and-artist').html(data.info[3].artist + ' &ndash; ' + data.info[3].album);
-      }));
-    }
-    return results;
+    Searcher = function(year, pos) {
+      var i, imagepath, j, len, ref, results, thing;
+      ref = data.info;
+      results = [];
+      for (i = j = 0, len = ref.length; j < len; i = ++j) {
+        thing = ref[i];
+        if (data.info[i].year === year) {
+          if (data.info[i].rank === pos) {
+            $('#rank-number').html('#' + data.info[i].rank);
+            $('#selected-year').html(data.info[i].year);
+            imagepath = '<img src="images/' + data.info[i].image + '.jpg">';
+            $('#album-art').html(imagepath);
+            results.push($('#name-and-artist').html(data.info[i].artist + ' &ndash; ' + data.info[i].album));
+          } else {
+            results.push(void 0);
+          }
+        } else {
+          results.push(void 0);
+        }
+      }
+      return results;
+    };
+    $('#positions').find('li').click(function() {
+      var dataID;
+      dataID = $(this).attr("data-id");
+      currentPos = parseInt(dataID, 10);
+      return Searcher(currentYear, currentPos);
+    });
+    return $('#years').find('li').click(function() {
+      var dataID;
+      dataID = $(this).attr("data-id");
+      currentYear = parseInt(dataID, 10);
+      return Searcher(currentYear, currentPos);
+    });
   }
 });
