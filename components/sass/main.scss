@@ -10,6 +10,11 @@
 $tan: #f7e5d6;
 $myblue: #0C3CB5;
 $mywhite: #FCFCFC;
+$blue2: #002B55;
+
+img {
+  max-width: 100%;
+}
 
 body {
   background-color: $tan;
@@ -43,7 +48,7 @@ body {
       transition: 0.3s;
       cursor: pointer;
       &:hover {
-        background-color: #002b55;
+        background-color: $blue2;
       }
     }
   }
@@ -52,10 +57,19 @@ body {
 #years {
   flex: 100%;
   ul {
-    padding: 0 0 0 50px;
+    padding: 0 0 0 100px;
     li {
-      padding: 20px 10px;
+      top: -20px;
+      position: relative;
+      padding: 40px 10px 20px 10px;
       margin: 0 5px;
+      &:hover {
+        top: 0;
+      }
+    }
+    .active {
+      background-color: $blue2;
+      top: 0;
     }
   }
 }
@@ -63,16 +77,33 @@ body {
 #positions {
   ul {
     padding: 50px 0 0 0;
+    margin: 0 130px 0 0;
     flex-flow: column nowrap;
     li {
-      padding: 10px 20px;
+      position: relative;
+      left: -20px;
+      padding: 10px 20px 10px 40px;
       margin: 5px 0;
+      transition: 0.2s;
+      &:hover {
+        left: 0;
+      }
     }
+  .active {
+    background-color: $blue2;
+    left: 0;
+  }
   }
 }
 
 #main-content {
-  margin: 0 0 0 150px;
+  margin: 0 20px;
+  max-width: 800px;
+  align-self: center;
+  flex: 1 1 400px;
+  img {
+    max-width: 100%;
+  }
 }
 
 #rank-number {
@@ -82,18 +113,19 @@ body {
 }
 
 #album-art {
-  img {
   max-width: 600px;
-}
 }
 
 h1 {
   font-family: 'Playfair Display', serif;
   color: $myblue;
-  margin: 50px 0;
+  margin: 20px 0;
+  line-height: 100px;
   .highlighting {
     background-color: $mywhite;
-      padding: 20px 10px;
+    padding: 20px 10px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
   }
 }
 p {

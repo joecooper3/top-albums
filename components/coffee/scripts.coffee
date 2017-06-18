@@ -6,7 +6,7 @@ $.ajax
    error: (jqXHR, textStatus, errorThrown) ->
      $('body').append "AJAX Error: #{textStatus}"
    success: (data, textStatus, jqXHR) ->
-     console.log "Successful AJAX call: #{data}"
+
      Searcher = (year, pos) ->
        for thing, i in data.info
          if data.info[i].year is year
@@ -16,11 +16,17 @@ $.ajax
              imagepath = '<img src="images/' + data.info[i].image + '.jpg">'
              $('#album-art').html imagepath
              $('#name-and-artist').html data.info[i].artist + ' &ndash; ' + data.info[i].album
+
      $('#positions').find('li').click ->
        dataID = $(this).attr("data-id")
        currentPos = parseInt(dataID, 10)
        Searcher(currentYear,currentPos)
+       $('#positions').find('li').removeClass('active')
+       $(this).addClass('active')
+
       $('#years').find('li').click ->
         dataID = $(this).attr("data-id")
         currentYear = parseInt(dataID, 10)
         Searcher(currentYear,currentPos)
+        $('#years').find('li').removeClass('active')
+        $(this).addClass('active')

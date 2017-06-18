@@ -16,7 +16,6 @@ $.ajax({
   },
   success: function(data, textStatus, jqXHR) {
     var Searcher;
-    console.log("Successful AJAX call: " + data);
     Searcher = function(year, pos) {
       var i, imagepath, j, len, ref, results, thing;
       ref = data.info;
@@ -43,13 +42,17 @@ $.ajax({
       var dataID;
       dataID = $(this).attr("data-id");
       currentPos = parseInt(dataID, 10);
-      return Searcher(currentYear, currentPos);
+      Searcher(currentYear, currentPos);
+      $('#positions').find('li').removeClass('active');
+      return $(this).addClass('active');
     });
     return $('#years').find('li').click(function() {
       var dataID;
       dataID = $(this).attr("data-id");
       currentYear = parseInt(dataID, 10);
-      return Searcher(currentYear, currentPos);
+      Searcher(currentYear, currentPos);
+      $('#years').find('li').removeClass('active');
+      return $(this).addClass('active');
     });
   }
 });

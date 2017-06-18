@@ -421,6 +421,9 @@ template {
   font-family: 'TheinBoldIta';
   src: url("../fonts/Theinhardt-BoldIta.otf"); }
 
+img {
+  max-width: 100%; }
+
 body {
   background-color: #f7e5d6;
   font-family: 'TheinReg'; }
@@ -451,41 +454,65 @@ body {
     transition: 0.3s;
     cursor: pointer; }
     #years ul li:hover, #positions ul li:hover {
-      background-color: #002b55; }
+      background-color: #002B55; }
 
 #years {
   flex: 100%; }
   #years ul {
-    padding: 0 0 0 50px; }
+    padding: 0 0 0 100px; }
     #years ul li {
-      padding: 20px 10px;
+      top: -20px;
+      position: relative;
+      padding: 40px 10px 20px 10px;
       margin: 0 5px; }
+      #years ul li:hover {
+        top: 0; }
+    #years ul .active {
+      background-color: #002B55;
+      top: 0; }
 
 #positions ul {
   padding: 50px 0 0 0;
+  margin: 0 130px 0 0;
   flex-flow: column nowrap; }
   #positions ul li {
-    padding: 10px 20px;
-    margin: 5px 0; }
+    position: relative;
+    left: -20px;
+    padding: 10px 20px 10px 40px;
+    margin: 5px 0;
+    transition: 0.2s; }
+    #positions ul li:hover {
+      left: 0; }
+  #positions ul .active {
+    background-color: #002B55;
+    left: 0; }
 
 #main-content {
-  margin: 0 0 0 150px; }
+  margin: 0 20px;
+  max-width: 800px;
+  align-self: center;
+  flex: 1 1 400px; }
+  #main-content img {
+    max-width: 100%; }
 
 #rank-number {
   font-size: 100px;
   font-family: 'Playfair Display', serif;
   color: #0C3CB5; }
 
-#album-art img {
+#album-art {
   max-width: 600px; }
 
 h1 {
   font-family: 'Playfair Display', serif;
   color: #0C3CB5;
-  margin: 50px 0; }
+  margin: 20px 0;
+  line-height: 100px; }
   h1 .highlighting {
     background-color: #FCFCFC;
-    padding: 20px 10px; }
+    padding: 20px 10px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone; }
 
 p {
   font-family: 'TheinReg'; }
