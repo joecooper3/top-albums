@@ -2,11 +2,38 @@
 
 function two(){return "chino amobi"};
 
-var currentPos, currentYear;
+var Faders, currentPos, currentYear;
 
 currentYear = 2016;
 
 currentPos = 1;
+
+Faders = function(div, item) {
+  if (div === 'selected-year') {
+    $('#' + div).animate({
+      opacity: 0
+    }).queue(function() {
+      $('#' + div).html(item);
+      return $('#' + div).dequeue();
+    });
+    $('#' + div).delay(1000).animate({
+      opacity: 1
+    });
+  } else {
+    if (div === 'album-art') {
+      item = '<img src="images/' + item + '.jpg">';
+    }
+  }
+  $('#' + div).animate({
+    opacity: 0
+  }).queue(function() {
+    $('#' + div).html(item);
+    return $('#' + div).dequeue();
+  });
+  return $('#' + div).delay(300).animate({
+    opacity: 1
+  });
+};
 
 $.ajax({
   url: "data.json",
@@ -24,10 +51,15 @@ $.ajax({
         thing = ref[i];
         if (data.info[i].year === year) {
           if (data.info[i].rank === pos) {
-            $('#rank-number').html('#' + data.info[i].rank);
-            $('#selected-year').html(data.info[i].year);
+            Faders('selected-year', data.info[i].year);
             imagepath = '<img src="images/' + data.info[i].image + '.jpg">';
+            $('#album-art').animate({
+              opacity: 0
+            });
             $('#album-art').html(imagepath);
+            $('#album-art').animate({
+              opacity: 1
+            });
             results.push($('#name-and-artist').html(data.info[i].artist + ' &ndash; ' + data.info[i].album));
           } else {
             results.push(void 0);

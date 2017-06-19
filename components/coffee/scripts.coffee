@@ -1,5 +1,18 @@
 currentYear = 2016
 currentPos = 1
+Faders = (div, item) ->
+  if div is 'selected-year'
+   $('#'+div).animate({opacity:0}).queue ->
+     $('#'+div).html(item)
+     $('#'+div).dequeue()
+   $('#'+div).delay(1000).animate({opacity:1})
+  else
+    if div is 'album-art'
+      item = '<img src="images/' + item + '.jpg">'
+   $('#'+div).animate({opacity:0}).queue ->
+     $('#'+div).html(item)
+     $('#'+div).dequeue()
+   $('#'+div).delay(300).animate({opacity:1})
 $.ajax
    url: "data.json"
    dataType: "json"
@@ -11,10 +24,13 @@ $.ajax
        for thing, i in data.info
          if data.info[i].year is year
            if data.info[i].rank is pos
-             $('#rank-number').html '#'+data.info[i].rank
-             $('#selected-year').html data.info[i].year
+             #Faders('rank-number',data.info[i].rank)
+             Faders('selected-year',data.info[i].year)
+             #Faders('album-art',data.info[i].image)
              imagepath = '<img src="images/' + data.info[i].image + '.jpg">'
+             $('#album-art').animate({opacity: 0})
              $('#album-art').html imagepath
+             $('#album-art').animate({opacity: 1})
              $('#name-and-artist').html data.info[i].artist + ' &ndash; ' + data.info[i].album
 
      $('#positions').find('li').click ->

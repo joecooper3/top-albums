@@ -111,6 +111,9 @@ body {
   font-family: 'Playfair Display', serif;
   color: $myblue;
 }
+#rank-number:before {
+  content: '#';
+}
 
 #album-art {
   max-width: 600px;

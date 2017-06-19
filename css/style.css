@@ -500,6 +500,9 @@ body {
   font-family: 'Playfair Display', serif;
   color: #0C3CB5; }
 
+#rank-number:before {
+  content: '#'; }
+
 #album-art {
   max-width: 600px; }
 
