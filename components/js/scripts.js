@@ -12,23 +12,30 @@ Faders = function(div, item) {
       $('#' + div).html(item);
       return $('#' + div).dequeue();
     });
-    $('#' + div).delay(1000).animate({
+    return $('#' + div).delay(1000).animate({
       opacity: 1
     });
   } else {
     if (div === 'album-art') {
       item = '<img src="images/' + item + '.jpg">';
     }
+    if (div === 'spotify') {
+      if ((item != null)) {
+        item = '<a href="' + item + '">Listen on Spotify</a>';
+      } else {
+        item = '';
+      }
+    }
+    $('#' + div).animate({
+      opacity: 0
+    }, 200).queue(function() {
+      $('#' + div).html(item);
+      return $('#' + div).dequeue();
+    });
+    return $('#' + div).delay(150).animate({
+      opacity: 1
+    });
   }
-  $('#' + div).animate({
-    opacity: 0
-  }).queue(function() {
-    $('#' + div).html(item);
-    return $('#' + div).dequeue();
-  });
-  return $('#' + div).delay(300).animate({
-    opacity: 1
-  });
 };
 
 $.ajax({
@@ -40,23 +47,19 @@ $.ajax({
   success: function(data, textStatus, jqXHR) {
     var Searcher;
     Searcher = function(year, pos) {
-      var i, imagepath, j, len, ref, results, thing;
+      var i, j, len, ref, results, thing;
       ref = data.info;
       results = [];
       for (i = j = 0, len = ref.length; j < len; i = ++j) {
         thing = ref[i];
         if (data.info[i].year === year) {
           if (data.info[i].rank === pos) {
+            Faders('rank-number', data.info[i].rank);
             Faders('selected-year', data.info[i].year);
-            imagepath = '<img src="images/' + data.info[i].image + '.jpg">';
-            $('#album-art').animate({
-              opacity: 0
-            });
-            $('#album-art').html(imagepath);
-            $('#album-art').animate({
-              opacity: 1
-            });
-            results.push($('#name-and-artist').html(data.info[i].artist + ' &ndash; ' + data.info[i].album));
+            Faders('album-art', data.info[i].image);
+            Faders('name-and-artist', data.info[i].artist + ' &ndash; ' + data.info[i].album);
+            Faders('genres', data.info[i].genres);
+            results.push(Faders('spotify', data.info[i].spotify));
           } else {
             results.push(void 0);
           }

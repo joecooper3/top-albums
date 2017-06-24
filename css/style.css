@@ -441,19 +441,22 @@ body {
   display: flex;
   flex-flow: row wrap; }
 
-#years ul, #positions ul {
+#positions ul,
+#years ul {
   display: flex;
   list-style-type: none;
   font-family: 'TheinMed';
   color: #FCFCFC;
   margin: 0;
   flex: 100%; }
-  #years ul li, #positions ul li {
+  #positions ul li,
+  #years ul li {
     display: inline;
     background-color: #0C3CB5;
     transition: 0.3s;
     cursor: pointer; }
-    #years ul li:hover, #positions ul li:hover {
+    #positions ul li:hover,
+    #years ul li:hover {
       background-color: #002B55; }
 
 #years {
@@ -463,7 +466,7 @@ body {
     #years ul li {
       top: -20px;
       position: relative;
-      padding: 40px 10px 20px 10px;
+      padding: 40px 10px 20px;
       margin: 0 5px; }
       #years ul li:hover {
         top: 0; }
@@ -472,7 +475,7 @@ body {
       top: 0; }
 
 #positions ul {
-  padding: 50px 0 0 0;
+  padding: 50px 0 0;
   margin: 0 130px 0 0;
   flex-flow: column nowrap; }
   #positions ul li {
@@ -505,6 +508,27 @@ body {
 
 #album-art {
   max-width: 600px; }
+
+#genres {
+  font-family: 'TheinBold', serif;
+  font-size: 30px;
+  color: #0C3CB5;
+  margin: 20px 0; }
+
+#spotify {
+  margin: 40px 0 100px 0;
+  max-width: 600px;
+  text-align: center; }
+  #spotify a {
+    font-family: 'TheinReg';
+    padding: 15px;
+    background-color: #6AE368;
+    border-radius: 30px;
+    color: #FCFCFC;
+    text-decoration: none;
+    transition: 0.3s; }
+  #spotify a:hover {
+    background-color: #46D546; }
 
 h1 {
   font-family: 'Playfair Display', serif;

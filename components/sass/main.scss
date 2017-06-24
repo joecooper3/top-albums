@@ -1,12 +1,35 @@
-@font-face{font-family:'TheinMed';src:url("../fonts/Theinhardt-Medium.otf")}
-@font-face{font-family:'TheinReg';src:url("../fonts/Theinhardt-Regular.otf")}
-@font-face{font-family:'TheinRegIta';src:url("../fonts/Theinhardt-RegularIta.otf")}
-@font-face{font-family:'TheinThin';src:url("../fonts/Theinhardt-Thin.otf")}
-@font-face{font-family:'TheinLight';src:url("../fonts/Theinhardt-Light.otf")}
-@font-face{font-family:'TheinLightIta';src:url("../fonts/Theinhardt-LightIta.otf")}
-@font-face{font-family:'TheinBold';src:url("../fonts/Theinhardt-Bold.otf")}
-@font-face{font-family:'TheinBoldIta';src:url("../fonts/Theinhardt-BoldIta.otf")}
-
+@font-face {
+  font-family: 'TheinMed';
+  src: url("../fonts/Theinhardt-Medium.otf");
+}
+@font-face {
+  font-family: 'TheinReg';
+  src: url("../fonts/Theinhardt-Regular.otf");
+}
+@font-face {
+  font-family: 'TheinRegIta';
+  src: url("../fonts/Theinhardt-RegularIta.otf");
+}
+@font-face {
+  font-family: 'TheinThin';
+  src: url("../fonts/Theinhardt-Thin.otf");
+}
+@font-face {
+  font-family: 'TheinLight';
+  src: url("../fonts/Theinhardt-Light.otf");
+}
+@font-face {
+  font-family: 'TheinLightIta';
+  src: url("../fonts/Theinhardt-LightIta.otf");
+}
+@font-face {
+  font-family: 'TheinBold';
+  src: url("../fonts/Theinhardt-Bold.otf");
+}
+@font-face {
+  font-family: 'TheinBoldIta';
+  src: url("../fonts/Theinhardt-BoldIta.otf");
+}
 $tan: #f7e5d6;
 $myblue: #0C3CB5;
 $mywhite: #FCFCFC;
@@ -20,6 +43,7 @@ body {
   background-color: $tan;
   font-family: 'TheinReg';
 }
+
 #selected-year {
   font-family: 'TheinBold';
   font-size: 200px;
@@ -29,12 +53,14 @@ body {
   right: 0;
   top: 50px;
 }
+
 #container {
   display: flex;
   flex-flow: row wrap;
 }
 
-#years, #positions {
+#positions,
+#years {
   ul {
     display: flex;
     list-style-type: none;
@@ -42,11 +68,13 @@ body {
     color: $mywhite;
     margin: 0;
     flex: 100%;
+
     li {
       display: inline;
       background-color: $myblue;
       transition: 0.3s;
       cursor: pointer;
+
       &:hover {
         background-color: $blue2;
       }
@@ -56,17 +84,21 @@ body {
 
 #years {
   flex: 100%;
+
   ul {
     padding: 0 0 0 100px;
+
     li {
       top: -20px;
       position: relative;
-      padding: 40px 10px 20px 10px;
+      padding: 40px 10px 20px;
       margin: 0 5px;
+
       &:hover {
         top: 0;
       }
     }
+
     .active {
       background-color: $blue2;
       top: 0;
@@ -76,23 +108,26 @@ body {
 
 #positions {
   ul {
-    padding: 50px 0 0 0;
+    padding: 50px 0 0;
     margin: 0 130px 0 0;
     flex-flow: column nowrap;
+
     li {
       position: relative;
       left: -20px;
       padding: 10px 20px 10px 40px;
       margin: 5px 0;
       transition: 0.2s;
+
       &:hover {
         left: 0;
       }
     }
-  .active {
-    background-color: $blue2;
-    left: 0;
-  }
+
+    .active {
+      background-color: $blue2;
+      left: 0;
+    }
   }
 }
 
@@ -101,6 +136,7 @@ body {
   max-width: 800px;
   align-self: center;
   flex: 1 1 400px;
+
   img {
     max-width: 100%;
   }
@@ -111,6 +147,7 @@ body {
   font-family: 'Playfair Display', serif;
   color: $myblue;
 }
+
 #rank-number:before {
   content: '#';
 }
@@ -119,11 +156,37 @@ body {
   max-width: 600px;
 }
 
+#genres {
+  font-family: 'TheinBold', serif;
+  font-size: 30px;
+  color: $myblue;
+  margin: 20px 0;
+}
+
+#spotify {
+  margin: 40px 0 100px 0;
+  max-width: 600px;
+  text-align: center;
+  a {
+    font-family: 'TheinReg';
+    padding: 15px;
+    background-color: #6AE368;
+    border-radius: 30px;
+    color: $mywhite;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  a:hover {
+    background-color: #46D546;
+  }
+}
+
 h1 {
   font-family: 'Playfair Display', serif;
   color: $myblue;
   margin: 20px 0;
   line-height: 100px;
+
   .highlighting {
     background-color: $mywhite;
     padding: 20px 10px;
@@ -131,6 +194,7 @@ h1 {
     -webkit-box-decoration-break: clone;
   }
 }
+
 p {
   font-family: 'TheinReg';
 }
