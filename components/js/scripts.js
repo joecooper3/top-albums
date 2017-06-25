@@ -113,10 +113,13 @@ $.ajax({
       dataID = $(this).attr("data-id");
       chosenYear = parseInt(dataID, 10);
       if (chosenYear !== currentYear) {
-        Searcher(chosenYear, currentPos);
+        chosenPos = currentPos = 1;
+        Searcher(chosenYear, 1);
         currentYear = chosenYear;
         $('#years').find('li').removeClass('active');
-        return $(this).addClass('active');
+        $(this).addClass('active');
+        $('#positions').find('li').removeClass('active');
+        return $('#first-pos').addClass('active');
       }
     });
   }

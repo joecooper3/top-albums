@@ -71,7 +71,10 @@ $.ajax
       dataID = $(this).attr("data-id")
       chosenYear = parseInt(dataID, 10)
       if chosenYear != currentYear
-        Searcher(chosenYear,currentPos)
+        chosenPos = currentPos = 1
+        Searcher(chosenYear,1)
         currentYear = chosenYear
         $('#years').find('li').removeClass('active')
         $(this).addClass('active')
+        $('#positions').find('li').removeClass('active')
+        $('#first-pos').addClass('active')
