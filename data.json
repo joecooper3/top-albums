@@ -321,7 +321,8 @@
       "artist": "Lil Durk",
       "album": "Signed to the Streets",
       "image": "signed-to-the-streets",
-      "genres": "Drill"
+      "genres": "Drill",
+      "spotify": "spotify:album:0u2zCSmrCPlRZXgXM8wagz"
     },
     {
       "year": 2013,
@@ -329,7 +330,8 @@
       "artist": "The Drones",
       "album": "I See Seaweed",
       "image": "i-see-seaweed",
-      "genres": "Punk Blues"
+      "genres": "Punk Blues",
+      "spotify": "spotify:album:41uUEhLnPAriHE4jZalkEq"
     },
     {
       "year": 2013,
@@ -337,7 +339,8 @@
       "artist": "Doppelgangaz",
       "album": "Hark",
       "image": "hark",
-      "genres": "East Coast Hip Hop, Boom Bap"
+      "genres": "East Coast Hip Hop, Boom Bap",
+      "spotify": "spotify:album:0cRsGsziFn7tKnmAxy8oHf"
     },
     {
       "year": 2013,
@@ -345,7 +348,8 @@
       "artist": "Lapalux",
       "album": "Nostalchic",
       "image": "nostalchic",
-      "genres": "Future Garage"
+      "genres": "Future Garage",
+      "spotify": "spotify:album:33y7ROK0hxUX4sGq2RG5NW"
     },
     {
       "year": 2013,
@@ -353,7 +357,8 @@
       "artist": "James Ferraro",
       "album": "NYC, Hell 3:00 AM",
       "image": "nyc-hell",
-      "genres": "Alternative R&B"
+      "genres": "Alternative R&B",
+      "spotify": "spotify:album:0VCKStV51dwAXLDJPfxL6O"
     }
   ]
 }

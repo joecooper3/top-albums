@@ -33,6 +33,11 @@ Faders = (div, item) ->
        item = '<a href="' + item + '" target="_blank">Listen on YouTube</a>'
       else
        item = ''
+    if div is 'datpiff'
+      if (item?)
+       item = '<a href="' + item + '" target="_blank">Listen on DatPiff</a>'
+      else
+       item = ''
     $('#'+div).animate({opacity:0},200).queue ->
       $('#'+div).html(item)
       $('#'+div).dequeue()
@@ -58,6 +63,7 @@ $.ajax
             Faders('soundcloud',data.info[i].soundcloud)
             Faders('bandcamp',data.info[i].bandcamp)
             Faders('youtube',data.info[i].youtube)
+            Faders('datpiff',data.info[i].datpiff)
 
     $('#positions').find('li').click ->
       dataID = $(this).attr("data-id")

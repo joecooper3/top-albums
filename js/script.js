@@ -53,6 +53,13 @@ Faders = function(div, item) {
         item = '';
       }
     }
+    if (div === 'datpiff') {
+      if ((item != null)) {
+        item = '<a href="' + item + '" target="_blank">Listen on DatPiff</a>';
+      } else {
+        item = '';
+      }
+    }
     $('#' + div).animate({
       opacity: 0
     }, 200).queue(function() {
@@ -89,7 +96,8 @@ $.ajax({
             Faders('spotify', data.info[i].spotify);
             Faders('soundcloud', data.info[i].soundcloud);
             Faders('bandcamp', data.info[i].bandcamp);
-            results.push(Faders('youtube', data.info[i].youtube));
+            Faders('youtube', data.info[i].youtube);
+            results.push(Faders('datpiff', data.info[i].datpiff));
           } else {
             results.push(void 0);
           }

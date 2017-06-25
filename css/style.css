@@ -520,7 +520,7 @@ body {
   max-width: 600px;
   text-align: center; }
 
-#spotify a, #soundcloud a, #bandcamp a, #youtube a {
+#spotify a, #soundcloud a, #bandcamp a, #youtube a, #datpiff a {
   font-family: 'TheinReg';
   padding: 15px;
   border-radius: 30px;
@@ -551,6 +551,12 @@ body {
 
 #youtube a:hover {
   background-color: #922320; }
+
+#datpiff a {
+  background-color: #2B2B2D; }
+
+#datpiff a:hover {
+  background-color: #4F4F53; }
 
 h1 {
   font-family: 'Playfair Display', serif;
