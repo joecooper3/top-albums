@@ -359,6 +359,96 @@
       "image": "nyc-hell",
       "genres": "Alternative R&B",
       "spotify": "spotify:album:0VCKStV51dwAXLDJPfxL6O"
+    },
+    {
+      "year": 2012,
+      "rank": 1,
+      "artist": "Deant Blunt & Inga Copeland",
+      "album": "Black is Beautiful",
+      "image": "black-is-beautiful",
+      "genres": "Hypnagogic Pop",
+      "spotify": "spotify:album:3QSGaMogY2fti5K6FBjRv8"
+    },
+    {
+      "year": 2012,
+      "rank": 2,
+      "artist": "Aaron Dilloway",
+      "album": "Modern Jester",
+      "image": "modern-jester",
+      "genres": "Noise, Tape Music",
+      "spotify": "spotify:album:32Ma3r8xwPQuhkLpMcAcAe"
+    },
+    {
+      "year": 2012,
+      "rank": 3,
+      "artist": "Killer Mike",
+      "album": "R.A.P. Music",
+      "image": "rap-music",
+      "genres": "Southern Hip Hop, Hardcore Hip Hop",
+      "spotify": "spotify:album:5EAhUoAz1G3WTvIfGZvmrh"
+    },
+    {
+      "year": 2012,
+      "rank": 4,
+      "artist": "Parquet Courts",
+      "album": "Light Up Gold",
+      "image": "light-up-gold",
+      "genres": "Indie Rock",
+      "spotify": "spotify:album:1aYXn1WnQWLTmOpQtKVeYJ"
+    },
+    {
+      "year": 2012,
+      "rank": 6,
+      "artist": "Future of the Left",
+      "album": "The Plot Against Common Sense",
+      "image": "the-plot-against-common-sense",
+      "genres": "Post-Hardcore",
+      "spotify": "spotify:album:07t1mMckO61tMce67UI2VH"
+    },
+    {
+      "year": 2012,
+      "rank": 5,
+      "artist": "Cloud Nothings",
+      "album": "Attack on Memory",
+      "image": "attack-on-memory",
+      "genres": "Post-Hardcore, Indie Rock",
+      "spotify": "spotify:album:1JgpvdsSfE94eZzYBk6ph9"
+    },
+    {
+      "year": 2012,
+      "rank": 7,
+      "artist": "Grimes",
+      "album": "Visions",
+      "image": "visions",
+      "genres": "Synthpop, Dream Pop",
+      "spotify": "spotify:album:48a7rOjTzpD1zzJAteeveE"
+    },
+    {
+      "year": 2012,
+      "rank": 8,
+      "artist": "Good Night & Good Morning",
+      "album": "Narrowing Type",
+      "image": "narrowing-type",
+      "genres": "Slowcore, Ambient",
+      "spotify": "spotify:album:6bpd42fj9zpl9OwNGMIeSP"
+    },
+    {
+      "year": 2012,
+      "rank": 9,
+      "artist": "The Men",
+      "album": "Open Your Heart",
+      "image": "open-your-heart",
+      "genres": "Noise Rock, Indie Rock",
+      "spotify": "spotify:album:0nVaPLv4z2SG4k7ebKLRJ0"
+    },
+    {
+      "year": 2012,
+      "rank": 10,
+      "artist": "Fiona Apple",
+      "album": "The Idler Wheel Is Wiser Than the Driver of the Screw and Whipping Cords Will Serve You More Than Ropes Will Ever Do",
+      "image": "the-idler-wheel",
+      "genres": "Art Pop, Singer/Songwriter",
+      "spotify": "spotify:album:7uccppFArLf9dNOwDftOZa"
     }
   ]
 }

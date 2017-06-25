@@ -108,10 +108,12 @@ $.ajax
          $('#years').find('[data-id="'+currentYear+'"]').addClass('active')
          resetToOne()
          Searcher(currentYear,1)
+         chosenYear++
        #right key
-       if e.keyCode is 39 && currentYear > 2013
+       if e.keyCode is 39 && currentYear > 2012
           $('#years').find('li').removeClass('active')
           currentYear--
           $('#years').find('[data-id="'+currentYear+'"]').addClass('active')
           resetToOne()
           Searcher(currentYear,1)
+          chosenYear--

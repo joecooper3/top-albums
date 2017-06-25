@@ -153,13 +153,15 @@ $.ajax({
         $('#years').find('[data-id="' + currentYear + '"]').addClass('active');
         resetToOne();
         Searcher(currentYear, 1);
+        chosenYear++;
       }
-      if (e.keyCode === 39 && currentYear > 2013) {
+      if (e.keyCode === 39 && currentYear > 2012) {
         $('#years').find('li').removeClass('active');
         currentYear--;
         $('#years').find('[data-id="' + currentYear + '"]').addClass('active');
         resetToOne();
-        return Searcher(currentYear, 1);
+        Searcher(currentYear, 1);
+        return chosenYear--;
       }
     };
   }
