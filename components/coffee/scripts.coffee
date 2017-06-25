@@ -43,6 +43,11 @@ Faders = (div, item) ->
       $('#'+div).dequeue()
     $('#'+div).delay(150).animate({opacity:1})
 
+resetToOne = ->
+  chosenPos = currentPos = 1
+  $('#positions').find('li').removeClass('active')
+  $('#first-pos').addClass('active')
+
 $.ajax
   url: "data.json"
   dataType: "json"
@@ -77,10 +82,36 @@ $.ajax
       dataID = $(this).attr("data-id")
       chosenYear = parseInt(dataID, 10)
       if chosenYear != currentYear
-        chosenPos = currentPos = 1
         Searcher(chosenYear,1)
         currentYear = chosenYear
         $('#years').find('li').removeClass('active')
         $(this).addClass('active')
+        resetToOne()
+
+    document.onkeydown = (e) ->
+      #up key
+      if e.keyCode is 38 && currentPos > 1
         $('#positions').find('li').removeClass('active')
-        $('#first-pos').addClass('active')
+        currentPos--
+        $('#positions').find('li:nth-child('+currentPos+')').addClass('active')
+        Searcher(currentYear,currentPos)
+      #down key
+      if e.keyCode is 40 && currentPos < 10
+        $('#positions').find('li').removeClass('active')
+        currentPos++
+        $('#positions').find('li:nth-child('+currentPos+')').addClass('active')
+        Searcher(currentYear,currentPos)
+      #left key
+      if e.keyCode is 37 && currentYear < 2016
+         $('#years').find('li').removeClass('active')
+         currentYear++
+         $('#years').find('[data-id="'+currentYear+'"]').addClass('active')
+         resetToOne()
+         Searcher(currentYear,1)
+       #right key
+       if e.keyCode is 39 && currentYear > 2013
+          $('#years').find('li').removeClass('active')
+          currentYear--
+          $('#years').find('[data-id="'+currentYear+'"]').addClass('active')
+          resetToOne()
+          Searcher(currentYear,1)

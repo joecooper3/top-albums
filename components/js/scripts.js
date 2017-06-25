@@ -1,4 +1,4 @@
-var Faders, chosenPos, chosenYear, currentPos, currentYear;
+var Faders, chosenPos, chosenYear, currentPos, currentYear, resetToOne;
 
 chosenYear = 2016;
 
@@ -72,6 +72,12 @@ Faders = function(div, item) {
   }
 };
 
+resetToOne = function() {
+  chosenPos = currentPos = 1;
+  $('#positions').find('li').removeClass('active');
+  return $('#first-pos').addClass('active');
+};
+
 $.ajax({
   url: "data.json",
   dataType: "json",
@@ -116,19 +122,45 @@ $.ajax({
       $('#positions').find('li').removeClass('active');
       return $(this).addClass('active');
     });
-    return $('#years').find('li').click(function() {
+    $('#years').find('li').click(function() {
       var dataID;
       dataID = $(this).attr("data-id");
       chosenYear = parseInt(dataID, 10);
       if (chosenYear !== currentYear) {
-        chosenPos = currentPos = 1;
         Searcher(chosenYear, 1);
         currentYear = chosenYear;
         $('#years').find('li').removeClass('active');
         $(this).addClass('active');
-        $('#positions').find('li').removeClass('active');
-        return $('#first-pos').addClass('active');
+        return resetToOne();
       }
     });
+    return document.onkeydown = function(e) {
+      if (e.keyCode === 38 && currentPos > 1) {
+        $('#positions').find('li').removeClass('active');
+        currentPos--;
+        $('#positions').find('li:nth-child(' + currentPos + ')').addClass('active');
+        Searcher(currentYear, currentPos);
+      }
+      if (e.keyCode === 40 && currentPos < 10) {
+        $('#positions').find('li').removeClass('active');
+        currentPos++;
+        $('#positions').find('li:nth-child(' + currentPos + ')').addClass('active');
+        Searcher(currentYear, currentPos);
+      }
+      if (e.keyCode === 37 && currentYear < 2016) {
+        $('#years').find('li').removeClass('active');
+        currentYear++;
+        $('#years').find('[data-id="' + currentYear + '"]').addClass('active');
+        resetToOne();
+        Searcher(currentYear, 1);
+      }
+      if (e.keyCode === 39 && currentYear > 2013) {
+        $('#years').find('li').removeClass('active');
+        currentYear--;
+        $('#years').find('[data-id="' + currentYear + '"]').addClass('active');
+        resetToOne();
+        return Searcher(currentYear, 1);
+      }
+    };
   }
 });
