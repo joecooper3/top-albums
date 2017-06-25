@@ -1,24 +1,26 @@
+var Faders, chosenPos, chosenYear, currentPos, currentYear;
 
-
-function two(){return "chino amobi"};
-
-var Faders, currentPos, currentYear;
+chosenYear = 2016;
 
 currentYear = 2016;
+
+chosenPos = 1;
 
 currentPos = 1;
 
 Faders = function(div, item) {
   if (div === 'selected-year') {
-    $('#' + div).animate({
-      opacity: 0
-    }).queue(function() {
-      $('#' + div).html(item);
-      return $('#' + div).dequeue();
-    });
-    return $('#' + div).delay(1000).animate({
-      opacity: 1
-    });
+    if (chosenYear !== currentYear) {
+      $('#' + div).animate({
+        opacity: 0
+      }).queue(function() {
+        $('#' + div).html(item);
+        return $('#' + div).dequeue();
+      });
+      return $('#' + div).delay(1000).animate({
+        opacity: 1
+      });
+    }
   } else {
     if (div === 'album-art') {
       item = '<img src="images/' + item + '.jpg">';
@@ -26,6 +28,27 @@ Faders = function(div, item) {
     if (div === 'spotify') {
       if ((item != null)) {
         item = '<a href="' + item + '">Listen on Spotify</a>';
+      } else {
+        item = '';
+      }
+    }
+    if (div === 'soundcloud') {
+      if ((item != null)) {
+        item = '<a href="' + item + '" target="_blank">Listen on Soundcloud</a>';
+      } else {
+        item = '';
+      }
+    }
+    if (div === 'bandcamp') {
+      if ((item != null)) {
+        item = '<a href="' + item + '" target="_blank">Listen on Bandcamp</a>';
+      } else {
+        item = '';
+      }
+    }
+    if (div === 'youtube') {
+      if ((item != null)) {
+        item = '<a href="' + item + '" target="_blank">Listen on YouTube</a>';
       } else {
         item = '';
       }
@@ -58,12 +81,15 @@ $.ajax({
         thing = ref[i];
         if (data.info[i].year === year) {
           if (data.info[i].rank === pos) {
-            Faders('rank-number', data.info[i].rank);
             Faders('selected-year', data.info[i].year);
+            Faders('rank-number', data.info[i].rank);
             Faders('album-art', data.info[i].image);
             Faders('name-and-artist', data.info[i].artist + ' &ndash; ' + data.info[i].album);
             Faders('genres', data.info[i].genres);
-            results.push(Faders('spotify', data.info[i].spotify));
+            Faders('spotify', data.info[i].spotify);
+            Faders('soundcloud', data.info[i].soundcloud);
+            Faders('bandcamp', data.info[i].bandcamp);
+            results.push(Faders('youtube', data.info[i].youtube));
           } else {
             results.push(void 0);
           }
@@ -76,18 +102,22 @@ $.ajax({
     $('#positions').find('li').click(function() {
       var dataID;
       dataID = $(this).attr("data-id");
-      currentPos = parseInt(dataID, 10);
-      Searcher(currentYear, currentPos);
+      chosenPos = parseInt(dataID, 10);
+      Searcher(currentYear, chosenPos);
+      currentPos = chosenPos;
       $('#positions').find('li').removeClass('active');
       return $(this).addClass('active');
     });
     return $('#years').find('li').click(function() {
       var dataID;
       dataID = $(this).attr("data-id");
-      currentYear = parseInt(dataID, 10);
-      Searcher(currentYear, currentPos);
-      $('#years').find('li').removeClass('active');
-      return $(this).addClass('active');
+      chosenYear = parseInt(dataID, 10);
+      if (chosenYear !== currentYear) {
+        Searcher(chosenYear, currentPos);
+        currentYear = chosenYear;
+        $('#years').find('li').removeClass('active');
+        return $(this).addClass('active');
+      }
     });
   }
 });

@@ -96,7 +96,8 @@
       "artist": "Young Thug",
       "album": "Barter 6",
       "image": "barter6",
-      "genres": "Trap Rap, Southern Hip Hop"
+      "genres": "Trap Rap, Southern Hip Hop",
+      "spotify": "spotify:album:0BsMZIueWsJLWng8A7sE8e"
     },
     {
       "year": 2015,
@@ -104,7 +105,8 @@
       "artist": "Lil Ugly Mane",
       "album": "Third Side of Tape",
       "image": "third-side-of-tape",
-      "genres": "Experimental Hip Hop, Instrumental Hip Hop"
+      "genres": "Experimental Hip Hop, Instrumental Hip Hop",
+      "bandcamp": "https://liluglymane.bandcamp.com/album/third-side-of-tape"
     },
     {
       "year": 2015,
@@ -112,7 +114,8 @@
       "artist": "The Coneheads",
       "album": "L.P.1.: 14 Year Old High School PC-Fascist Hype Lords Rip Off Devo for the Sake of Extorting $$$ From Helpless Impressionable Midwestern Internet Peoplepunks L.P.",
       "image": "lp1",
-      "genres": "Post-Punk"
+      "genres": "Post-Punk",
+      "bandcamp": "https://erstetheketontraeger.bandcamp.com/album/ett-028-the-coneheads-l-p-1-aka-14-year-old-high-school-pc-fascist-hype-lords-rip-off-devo-for-the-sake-of-extorting-from-helpless-impressionable-midwestern-internet-peoplepunks-l-p"
     },
     {
       "year": 2015,
@@ -120,7 +123,8 @@
       "artist": "Titus Andronicus",
       "album": "The Most Lamentable Tragedy",
       "image": "the-most-lamentable-tragedy",
-      "genres": "Punk Rock, Indie Rock, Rock Opera"
+      "genres": "Punk Rock, Indie Rock, Rock Opera",
+      "spotify": "spotify:album:6tcFu0TqSurn0s4unYDXSO"
     },
     {
       "year": 2015,
@@ -128,7 +132,8 @@
       "artist": "Oneohtrix Point Never",
       "album": "Garden of Delete",
       "image": "garden-of-delete",
-      "genres": "Progressive Electronic, Post-Industrial"
+      "genres": "Progressive Electronic, Post-Industrial",
+      "spotify": "spotify:album:4l4tgdU69cbukMzliC4xI6"
     },
     {
       "year": 2015,
@@ -136,7 +141,8 @@
       "artist": "Matana Roberts",
       "album": "Coin Coin Chapter Three: River Run Thee ",
       "image": "coin-coin-chapter-three",
-      "genres": "Experimental"
+      "genres": "Experimental",
+      "spotify": "spotify:album:3rLsYmzeiIzXAHfOdelXpR"
     },
     {
       "year": 2015,
@@ -144,7 +150,8 @@
       "artist": "Jefre Cantu-Ledesma",
       "album": "A Year with 13 Moons",
       "image": "a-year-with-13-moons",
-      "genres": "Ambient"
+      "genres": "Ambient",
+      "spotify": "spotify:album:0vvinCZRkxYMgKBJJdQ53Y"
     },
     {
       "year": 2015,
@@ -152,7 +159,8 @@
       "artist": "Dawn Richard",
       "album": "Blackheart",
       "image": "blackheart",
-      "genres": "Alternative R&B"
+      "genres": "Alternative R&B",
+      "spotify": "spotify:album:2IPKoEWJgWuM83zZOq3vkW"
     },
     {
       "year": 2015,
@@ -160,7 +168,8 @@
       "artist": "Domenique Dumont",
       "album": "Comme ça",
       "image": "comme-ca",
-      "genres": "Balearic Beat, Synthpop"
+      "genres": "Balearic Beat, Synthpop",
+      "spotify": "spotify:album:55YrEqkp3Qrnue9WXHXo8t"
     },
     {
       "year": 2015,
@@ -168,7 +177,8 @@
       "artist": "Levon Vincent",
       "album": "s/t",
       "image": "levon-vincent",
-      "genres": "Deep House, Techno"
+      "genres": "Deep House, Techno",
+      "youtube": "https://www.youtube.com/watch?v=2scYIgM0_HM"
     },
     {
       "year": 2014,
@@ -176,7 +186,8 @@
       "artist": "Grouper",
       "album": "Ruins",
       "image": "ruins",
-      "genres": "Singer/Songwriter, Ambient"
+      "genres": "Singer/Songwriter, Ambient",
+      "spotify": "spotify:album:5ElYoVUqRQIlDekD1v6aKa"
     },
     {
       "year": 2014,
@@ -184,7 +195,8 @@
       "artist": "Dean Blunt",
       "album": "Black Metal",
       "image": "black-metal",
-      "genres": "Art Pop"
+      "genres": "Art Pop",
+      "spotify": "spotify:album:3NaLxwBorilUsVXaB9NCKw"
     },
     {
       "year": 2014,
@@ -192,7 +204,8 @@
       "artist": "Travi$ Scott",
       "album": "Days Before Rodeo",
       "image": "days-before-rodeo",
-      "genres": "Southern Hip Hop, Trap Rap"
+      "genres": "Southern Hip Hop, Trap Rap",
+      "soundcloud" : "https://soundcloud.com/travisscott-2/sets/days-before-rodeo"
     },
     {
       "year": 2014,
@@ -200,7 +213,8 @@
       "artist": "Kevin Gates",
       "album": "By Any Means",
       "image": "by-any-means",
-      "genres": "Trap Rap, Southern Hip Hop, Pop Rap"
+      "genres": "Trap Rap, Southern Hip Hop, Pop Rap",
+      "spotify" : "spotify:album:5ZzFFF7wSMmGaIWjAHElnW"
     },
     {
       "year": 2014,
@@ -208,7 +222,8 @@
       "artist": "Various Artists",
       "album": "We Invented the Bop",
       "image": "we-invented-the-bop",
-      "genres": "Bop"
+      "genres": "Bop",
+      "datpiff": "http://www.datpiff.com/DJ-Moondawg-We-Invented-The-Bop-mixtape.575571.html"
     },
     {
       "year": 2014,
@@ -216,7 +231,8 @@
       "artist": "G Herbo",
       "album": "Welcome to Fazoland",
       "image": "welcome-to-fazoland",
-      "genres": "Drill"
+      "genres": "Drill",
+      "spotify": "spotify:album:2UZkY7Dr1xPY6pnkz6my2B"
     },
     {
       "year": 2014,
@@ -224,15 +240,17 @@
       "artist": "clipping.",
       "album": "CLPPNG",
       "image": "clppng",
-      "genres": "Industrial Hip Hop, Experimental Hip Hop"
+      "genres": "Industrial Hip Hop, Experimental Hip Hop",
+      "spotify": "spotify:album:0nzammMx8yd48selZLWfUx"
     },
     {
       "year": 2014,
       "rank": 8,
-      "artist": "Ratking",
+      "artist": "RATKING",
       "album": "So It Goes",
       "image": "so-it-goes",
-      "genres": "East Coast Hip Hop, Abstract Hip Hop, Experimental Hip Hop"
+      "genres": "East Coast Hip Hop, Abstract Hip Hop, Experimental Hip Hop",
+      "spotify": "spotify:album:3hXl1HiPIzbR1alZy3Eaf3"
     },
     {
       "year": 2014,
@@ -240,7 +258,8 @@
       "artist": "No Lands",
       "album": "Negative Space",
       "image": "negative-space",
-      "genres": "Art Rock"
+      "genres": "Art Rock",
+      "spotify": "spotify:album:0S4HqiBsTi6UJyVDNycH4i"
     },
     {
       "year": 2014,
@@ -248,7 +267,8 @@
       "artist": "Chris Crack & TREE",
       "album": "TreeSwag",
       "image": "treeswag",
-      "genres": "Hip Hop"
+      "genres": "Hip Hop",
+      "spotify": "spotify:album:5Ri6Xm340ZVyYqXas5wFex"
     },
     {
       "year": 2013,
@@ -256,7 +276,8 @@
       "artist": "Oneohtrix Point Never",
       "album": "R Plus Seven",
       "image": "r-plus-seven",
-      "genres": "Progressive Electronic"
+      "genres": "Progressive Electronic",
+      "spotify": "spotify:album:68PRq4zj7YXMwiUq6FNGvR"
     },
     {
       "year": 2013,
@@ -264,7 +285,8 @@
       "artist": "Car Seat Headrest",
       "album": "Nervous Young Man",
       "image": "nervous-young-man",
-      "genres": "Lo-Fi Indie, Singer/Songwriter"
+      "genres": "Lo-Fi Indie, Singer/Songwriter",
+      "spotify": "spotify:album:3So2z7sZog8eBEWgm1zvHC"
     },
     {
       "year": 2013,
@@ -272,7 +294,8 @@
       "artist": "Dean Blunt",
       "album": "The Redeemer",
       "image": "the-redeemer",
-      "genres": "Art Pop"
+      "genres": "Art Pop",
+      "spotify": "spotify:album:7eHYXk2STUYUbQ3yuekcEz"
     },
     {
       "year": 2013,
@@ -280,7 +303,8 @@
       "artist": "Daniel Wohl",
       "album": "Corps Exquis",
       "image": "corps-exquis",
-      "genres": "Modern Classical, Electroacoustic"
+      "genres": "Modern Classical, Electroacoustic",
+      "spotify": "spotify:album:6XiQhbqLM3hKSURegEMZN6"
     },
     {
       "year": 2013,
@@ -288,7 +312,8 @@
       "artist": "Death Grips",
       "album": "Government Plates",
       "image": "government-plates",
-      "genres": "Industrial Hip Hop, Abstract Hip Hop, Glitch Hop, Experimental Hip Hop"
+      "genres": "Industrial Hip Hop, Abstract Hip Hop, Glitch Hop, Experimental Hip Hop",
+      "spotify": "spotify:album:2EuKpzSQ9RQ2n06Iu0pDop"
     },
     {
       "year": 2013,

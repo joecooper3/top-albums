@@ -515,20 +515,42 @@ body {
   color: #0C3CB5;
   margin: 20px 0; }
 
-#spotify {
+#player-container {
   margin: 40px 0 100px 0;
   max-width: 600px;
   text-align: center; }
-  #spotify a {
-    font-family: 'TheinReg';
-    padding: 15px;
-    background-color: #6AE368;
-    border-radius: 30px;
-    color: #FCFCFC;
-    text-decoration: none;
-    transition: 0.3s; }
-  #spotify a:hover {
-    background-color: #46D546; }
+
+#spotify a, #soundcloud a, #bandcamp a, #youtube a {
+  font-family: 'TheinReg';
+  padding: 15px;
+  border-radius: 30px;
+  color: #FCFCFC;
+  text-decoration: none;
+  transition: 0.3s; }
+
+#spotify a {
+  background-color: #6AE368; }
+
+#spotify a:hover {
+  background-color: #46D546; }
+
+#soundcloud a {
+  background-color: #ff7700; }
+
+#soundcloud a:hover {
+  background-color: #ff993f; }
+
+#bandcamp a {
+  background-color: #639AA9; }
+
+#bandcamp a:hover {
+  background-color: #3F7D8E; }
+
+#youtube a {
+  background-color: #c4302b; }
+
+#youtube a:hover {
+  background-color: #922320; }
 
 h1 {
   font-family: 'Playfair Display', serif;

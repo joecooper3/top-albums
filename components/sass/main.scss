@@ -162,22 +162,51 @@ body {
   color: $myblue;
   margin: 20px 0;
 }
-
-#spotify {
+#player-container {
   margin: 40px 0 100px 0;
   max-width: 600px;
   text-align: center;
+}
+#spotify, #soundcloud, #bandcamp, #youtube {
   a {
     font-family: 'TheinReg';
     padding: 15px;
-    background-color: #6AE368;
     border-radius: 30px;
     color: $mywhite;
     text-decoration: none;
     transition: 0.3s;
   }
+}
+#spotify {
+  a {
+    background-color: #6AE368;
+  }
   a:hover {
     background-color: #46D546;
+  }
+}
+#soundcloud {
+  a {
+    background-color: #ff7700;
+  }
+  a:hover {
+    background-color: #ff993f;
+  }
+}
+#bandcamp {
+  a {
+    background-color: #639AA9;
+  }
+  a:hover {
+    background-color: #3F7D8E;
+  }
+}
+#youtube {
+  a {
+    background-color: #c4302b;
+  }
+  a:hover {
+    background-color: #922320;
   }
 }
 
