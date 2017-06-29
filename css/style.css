@@ -428,6 +428,9 @@ body {
   background-color: #f7e5d6;
   font-family: 'TheinReg'; }
 
+.hidden {
+  opacity: 0; }
+
 #selected-year {
   font-family: 'TheinBold';
   font-size: 200px;
@@ -508,6 +511,9 @@ body {
 
 #album-art {
   max-width: 600px; }
+  #album-art p {
+    font-size: 22px;
+    line-height: 30px; }
 
 #genres {
   font-family: 'TheinBold', serif;
@@ -567,7 +573,10 @@ h1 {
     background-color: #FCFCFC;
     padding: 20px 10px;
     box-decoration-break: clone;
-    -webkit-box-decoration-break: clone; }
+    -webkit-box-decoration-break: clone;
+    border: 8px solid transparent;
+    border-image: url("../memphis.svg") 28 stretch;
+    border-image-outset: 1.05; }
 
 p {
   font-family: 'TheinReg'; }

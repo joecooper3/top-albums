@@ -1,8 +1,8 @@
 var Faders, chosenPos, chosenYear, currentPos, currentYear, resetToOne;
 
-chosenYear = 2016;
+chosenYear = 1;
 
-currentYear = 2016;
+currentYear = 1;
 
 chosenPos = 1;
 
@@ -126,6 +126,9 @@ $.ajax({
       var dataID;
       dataID = $(this).attr("data-id");
       chosenYear = parseInt(dataID, 10);
+      if (currentYear = 1) {
+        $('#positions').removeClass('hidden');
+      }
       if (chosenYear !== currentYear) {
         Searcher(chosenYear, 1);
         currentYear = chosenYear;
@@ -155,7 +158,7 @@ $.ajax({
         Searcher(currentYear, 1);
         chosenYear++;
       }
-      if (e.keyCode === 39 && currentYear > 2012) {
+      if (e.keyCode === 39 && currentYear > 2011) {
         $('#years').find('li').removeClass('active');
         currentYear--;
         $('#years').find('[data-id="' + currentYear + '"]').addClass('active');

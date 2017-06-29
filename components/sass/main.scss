@@ -44,6 +44,10 @@ body {
   font-family: 'TheinReg';
 }
 
+.hidden {
+  opacity: 0;
+}
+
 #selected-year {
   font-family: 'TheinBold';
   font-size: 200px;
@@ -154,6 +158,10 @@ body {
 
 #album-art {
   max-width: 600px;
+  p {
+    font-size: 22px;
+    line-height: 30px;
+  }
 }
 
 #genres {
@@ -229,6 +237,9 @@ h1 {
     padding: 20px 10px;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
+    border: 8px solid transparent;
+    border-image: url('../memphis.svg') 28 stretch;
+    border-image-outset: 1.05;
   }
 }
 

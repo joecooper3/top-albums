@@ -363,7 +363,7 @@
     {
       "year": 2012,
       "rank": 1,
-      "artist": "Deant Blunt & Inga Copeland",
+      "artist": "Dean Blunt & Inga Copeland",
       "album": "Black is Beautiful",
       "image": "black-is-beautiful",
       "genres": "Hypnagogic Pop",
@@ -449,6 +449,96 @@
       "image": "the-idler-wheel",
       "genres": "Art Pop, Singer/Songwriter",
       "spotify": "spotify:album:7uccppFArLf9dNOwDftOZa"
+    },
+    {
+      "year": 2011,
+      "rank": 1,
+      "artist": "Danny Brown",
+      "album": "XXX",
+      "image": "xxx",
+      "genres": "Hardcore Hip Hop",
+      "spotify": "spotify:album:3j21GO4l4W0w7hdF8JVPmo"
+    },
+    {
+      "year": 2011,
+      "rank": 2,
+      "artist": "Oneohtrix Point Never",
+      "album": "Replica",
+      "image": "replica",
+      "genres": "Plunderphonics, Ambient",
+      "spotify": "spotify:album:1DtXzewBvv5vZBnl3ZmJqo"
+    },
+    {
+      "year": 2011,
+      "rank": 3,
+      "artist": "Car Seat Headrest",
+      "album": "Twin Fantasy",
+      "image": "twin-fantasy",
+      "genres": "Lo-Fi Indie",
+      "spotify": "spotify:album:5Se8ihcLiCjieh5SbteEPU"
+    },
+    {
+      "year": 2011,
+      "rank": 4,
+      "artist": "Rene Hell",
+      "album": "The Terminal Symphony",
+      "image": "the-terminal-symphony",
+      "genres": "Electronic, Electroacoustic",
+      "spotify": "spotify:album:0IpmiE97SRWlXsHwHv27ke"
+    },
+    {
+      "year": 2011,
+      "rank": 5,
+      "artist": "Macintosh Plus",
+      "album": "Floral Shoppe",
+      "image": "floral-shoppe",
+      "genres": "Vaporwave",
+      "bandcamp": "https://beerontherug.bandcamp.com/album/floral-shoppe"
+    },
+    {
+      "year": 2011,
+      "rank": 6,
+      "artist": "Gang Gang Dance",
+      "album": "Eye Contact",
+      "image": "eye-contact",
+      "genres": "Neo-Psychedelia",
+      "spotify": "spotify:album:3FnTGwJUmashhPZm9T87k4"
+    },
+    {
+      "year": 2011,
+      "rank": 8,
+      "artist": "Clams Casino",
+      "album": "Instrumentals",
+      "image": "instrumentals",
+      "genres": "Instrumental Hip Hop, Cloud Rap",
+      "soundcloud": "https://soundcloud.com/clammyclams/sets/set-title"
+    },
+    {
+      "year": 2011,
+      "rank": 7,
+      "artist": "Real Estate",
+      "album": "Days",
+      "image": "days",
+      "genres": "Indie Pop, Indie Rock, Jangle Pop",
+      "spotify": "spotify:album:7e6bDoD8VD0549bu69UTEF"
+    },
+    {
+      "year": 2011,
+      "rank": 9,
+      "artist": "Cheveu",
+      "album": "1000",
+      "image": "1000",
+      "genres": "Art Punk, Synth Punk, Post-Punk",
+      "spotify": "spotify:album:4duQxCxK7LfrwoZsHtMohe"
+    },
+    {
+      "year": 2011,
+      "rank": 10,
+      "artist": "Moon Duo",
+      "album": "Mazes",
+      "image": "mazes",
+      "genres": "Psychedelic Rock, Neo-Psychedelia",
+      "spotify": "spotify:album:3mGEzlvacIE6T9ZqJWMCsv"
     }
   ]
 }
