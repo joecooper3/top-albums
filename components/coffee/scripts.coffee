@@ -2,14 +2,15 @@ chosenYear = 1
 currentYear = 1
 chosenPos = 1
 currentPos = 1
+fadeOutcomplete = false
 
 Faders = (div, item) ->
   if div is 'selected-year'
     if chosenYear != currentYear
-      $('#'+div).animate({opacity:0}).queue ->
+      $('#'+div).animate({opacity:0},400).queue ->
         $('#'+div).html(item)
+        $('#'+div).delay(1000).animate({opacity:1})
         $('#'+div).dequeue()
-      $('#'+div).delay(1000).animate({opacity:1})
   else
     if div is 'album-art'
       item = '<img src="images/' + item + '.jpg">'
@@ -41,7 +42,7 @@ Faders = (div, item) ->
     $('#'+div).animate({opacity:0},200).queue ->
       $('#'+div).html(item)
       $('#'+div).dequeue()
-    $('#'+div).delay(150).animate({opacity:1})
+      $('#'+div).delay(150).animate({opacity:1})
 
 resetToOne = ->
   chosenPos = currentPos = 1
@@ -82,7 +83,7 @@ $.ajax
       dataID = $(this).attr("data-id")
       chosenYear = parseInt(dataID, 10)
       if currentYear = 1
-        $('#positions').removeClass('hidden')
+        $('#positions').find('ul').removeClass('asleep')
       if chosenYear != currentYear
         Searcher(chosenYear,1)
         currentYear = chosenYear

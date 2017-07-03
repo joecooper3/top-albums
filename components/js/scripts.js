@@ -1,4 +1,4 @@
-var Faders, chosenPos, chosenYear, currentPos, currentYear, resetToOne;
+var Faders, chosenPos, chosenYear, currentPos, currentYear, fadeOutcomplete, resetToOne;
 
 chosenYear = 1;
 
@@ -8,17 +8,19 @@ chosenPos = 1;
 
 currentPos = 1;
 
+fadeOutcomplete = false;
+
 Faders = function(div, item) {
   if (div === 'selected-year') {
     if (chosenYear !== currentYear) {
-      $('#' + div).animate({
+      return $('#' + div).animate({
         opacity: 0
-      }).queue(function() {
+      }, 400).queue(function() {
         $('#' + div).html(item);
+        $('#' + div).delay(1000).animate({
+          opacity: 1
+        });
         return $('#' + div).dequeue();
-      });
-      return $('#' + div).delay(1000).animate({
-        opacity: 1
       });
     }
   } else {
@@ -60,14 +62,14 @@ Faders = function(div, item) {
         item = '';
       }
     }
-    $('#' + div).animate({
+    return $('#' + div).animate({
       opacity: 0
     }, 200).queue(function() {
       $('#' + div).html(item);
-      return $('#' + div).dequeue();
-    });
-    return $('#' + div).delay(150).animate({
-      opacity: 1
+      $('#' + div).dequeue();
+      return $('#' + div).delay(150).animate({
+        opacity: 1
+      });
     });
   }
 };
@@ -127,7 +129,7 @@ $.ajax({
       dataID = $(this).attr("data-id");
       chosenYear = parseInt(dataID, 10);
       if (currentYear = 1) {
-        $('#positions').removeClass('hidden');
+        $('#positions').find('ul').removeClass('asleep');
       }
       if (chosenYear !== currentYear) {
         Searcher(chosenYear, 1);

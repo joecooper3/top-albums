@@ -486,12 +486,16 @@ body {
     left: -20px;
     padding: 10px 20px 10px 40px;
     margin: 5px 0;
-    transition: 0.2s; }
+    transition: 0.2s;
+    transition: 0.5s left; }
     #positions ul li:hover {
       left: 0; }
   #positions ul .active {
     background-color: #002B55;
     left: 0; }
+
+#positions ul.asleep li {
+  left: -100px; }
 
 #main-content {
   margin: 0 20px;

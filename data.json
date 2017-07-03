@@ -539,6 +539,96 @@
       "image": "mazes",
       "genres": "Psychedelic Rock, Neo-Psychedelia",
       "spotify": "spotify:album:3mGEzlvacIE6T9ZqJWMCsv"
+    },
+    {
+      "year": 2010,
+      "rank": 1,
+      "artist": "My Beautiful Dark Twisted Fantasy",
+      "album": "Kanye West",
+      "image": "dark-twisted-fantasy",
+      "genres": "Hip Hop, Pop Rap",
+      "spotify": "spotify:album:20r762YmB5HeofjMCiPMLv"
+    },
+    {
+      "year": 2010,
+      "rank": 2,
+      "artist": "Titus Andronicus",
+      "album": "The Monitor",
+      "image": "the-monitor",
+      "genres": "Indie Rock, Folk Punk",
+      "spotify": "spotify:album:5U09FQWagzAU5HPmufUAlU"
+    },
+    {
+      "year": 2010,
+      "rank": 3,
+      "artist": "Emeralds",
+      "album": "Does It Look Like I'm Here?",
+      "image": "does-it-look-like-im-here",
+      "genres": "Progressive Electronic, Ambient",
+      "spotify": "spotify:album:0c0XkZh9vWXg473nchoArI"
+    },
+    {
+      "year": 2010,
+      "rank": 4,
+      "artist": "Wavves",
+      "album": "King of the Beach",
+      "image": "king-of-the-beach",
+      "genres": "Indie Rock, Surf Punk",
+      "spotify": "spotify:album:7Mn0aXVHjaoFZPKLssqI9d"
+    },
+    {
+      "year": 2010,
+      "rank": 5,
+      "artist": "Allo Darlin'",
+      "album": "s/t",
+      "image": "allo-darlin",
+      "genres": "Twee Pop, Indie Pop",
+      "spotify": "spotify:album:00r8ZlXYm0KLyHHjgyqXa5"
+    },
+    {
+      "year": 2010,
+      "rank": 6,
+      "artist": "Rene Hell",
+      "album": "Porcelain Opera",
+      "image": "porcelain-opera",
+      "genres": "Ambient, Electronic",
+      "spotify": "spotify:album:0LPcHksdVzfphtowOAP48y"
+    },
+    {
+      "year": 2010,
+      "rank": 7,
+      "artist": "Curren$y",
+      "album": "Pilot Talk",
+      "image": "pilot-talk",
+      "genres": "Southern Hip Hop",
+      "spotify": "spotify:album:5ydx8HEoTmJrxZuPKcTU4V"
+    },
+    {
+      "year": 2010,
+      "rank": 8,
+      "artist": "Beach House",
+      "album": "Teen Dream",
+      "image": "teen-dream",
+      "genres": "Dream Pop, Indie Pop",
+      "spotify": "spotify:album:5eQiIOG8XyHdfhUUhmm4hD"
+    },
+    {
+      "year": 2010,
+      "rank": 9,
+      "artist": "Four Tet",
+      "album": "There is Love in You",
+      "image": "there-is-love-in-you",
+      "genres": "Microhouse",
+      "spotify": "spotify:album:7drSkoKryU4c9Xx7QKZdv9"
+    },
+    {
+      "year": 2010,
+      "rank": 10,
+      "artist": "LCD Soundsystem",
+      "album": "This Is Happening",
+      "image": "this-is-happening",
+      "genres": "Dance-Punk, Indietronica",
+      "spotify": "spotify:album:4hnqM0JK4CM1phwfq1Ldyz"
     }
   ]
 }
