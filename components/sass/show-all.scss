@@ -1,0 +1,39 @@
+$mywhite: #FCFCFC;
+$myblue: #0C3CB5;
+
+#show-all-container {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 135px;
+
+  .item {
+    flex: 1 1 210px;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    max-width: 250px;
+    img {
+      opacity: 1;
+      max-width: 100%;
+      transition: 0.25s;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+    .image-container {
+
+    }
+  }
+
+  .meta {
+    opacity: 1;
+    transition: 0.3s ease;
+    background-color: $mywhite;
+    color: $myblue;
+    font-family: theinMed;
+    font-size: 20px;
+    display: block;
+    padding: 10px 15px;
+    z-index: 59;
+  }
+}

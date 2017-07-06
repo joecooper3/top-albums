@@ -14,7 +14,7 @@ Faders = (div, item) ->
         $('#'+div).dequeue()
   else
     if div is 'album-art'
-      item = '<img src="images/' + item + '.jpg">'
+      item = '<img src="images/' + item + '.jpg" srcset="images/' + item + '.jpg 1x, images/' + item + '@2x.jpg 2x">'
     if div is 'spotify'
       if (item?)
         item = '<a href="' + item + '">Listen on Spotify</a>'
@@ -72,6 +72,21 @@ $.ajax
             Faders('youtube',data.info[i].youtube)
             Faders('datpiff',data.info[i].datpiff)
 
+    GridDisplay = (art, artist, album, year) ->
+      $showAllContainer = $('<div>', {id: 'show-all-container'})
+      $('#main-content').prepend($showAllContainer)
+      content = ''
+      for thing, i in data.info
+        if data.info[i].year is year
+          content += '<div class="item">
+            <img src="images/thumbs/' + data.info[i].image + '.jpg"
+            srcset="images/thumbs/' + data.info[i].image + '.jpg 1x,
+            images/' + data.info[i].image + '.jpg 2x">
+            <span class="meta">' + data.info[i].artist + ' - ' + data.info[i].album + '</span>
+          </div>'
+      $showAllContainer.html(content)
+      console.log content
+
     $('#positions').find('li').click ->
       dataID = $(this).attr("data-id")
       chosenPos = parseInt(dataID, 10)
@@ -91,6 +106,10 @@ $.ajax
         $('#years').find('li').removeClass('active')
         $(this).addClass('active')
         resetToOne()
+
+    $('#show-all').click ->
+      showAll = true
+      GridDisplay('welcome-to-fazoland','G Herbo','is dead', chosenYear)
 
     document.onkeydown = (e) ->
       #up key

@@ -581,33 +581,6 @@ body {
 #datpiff a:hover {
   background-color: #4F4F53; }
 
-#show-all-container {
-  display: flex;
-  flex-flow: row wrap;
-  margin-top: 135px; }
-  #show-all-container .item {
-    flex: 1 1 210px;
-    margin: 10px;
-    position: relative;
-    overflow: hidden;
-    box-sizing: border-box; }
-    #show-all-container .item img {
-      opacity: 0;
-      max-width: 100%;
-      transition: 0.25s;
-      overflow: hidden;
-      box-sizing: border-box; }
-  #show-all-container .meta {
-    opacity: 1;
-    transition: 0.3s ease;
-    background-color: #FCFCFC;
-    color: #0C3CB5;
-    font-family: theinMed;
-    font-size: 20px;
-    display: block;
-    padding: 10px 15px;
-    z-index: 59; }
-
 h1 {
   font-family: 'Playfair Display', serif;
   color: #0C3CB5;
@@ -624,3 +597,31 @@ h1 {
 
 p {
   font-family: 'TheinReg'; }
+
+#show-all-container {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 135px; }
+  #show-all-container .item {
+    flex: 1 1 210px;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    max-width: 250px; }
+    #show-all-container .item img {
+      opacity: 1;
+      max-width: 100%;
+      transition: 0.25s;
+      overflow: hidden;
+      box-sizing: border-box; }
+  #show-all-container .meta {
+    opacity: 1;
+    transition: 0.3s ease;
+    background-color: #FCFCFC;
+    color: #0C3CB5;
+    font-family: theinMed;
+    font-size: 20px;
+    display: block;
+    padding: 10px 15px;
+    z-index: 59; }

@@ -27,7 +27,7 @@ Faders = function(div, item) {
     }
   } else {
     if (div === 'album-art') {
-      item = '<img src="images/' + item + '.jpg">';
+      item = '<img src="images/' + item + '.jpg" srcset="images/' + item + '.jpg 1x, images/' + item + '@2x.jpg 2x">';
     }
     if (div === 'spotify') {
       if ((item != null)) {
@@ -89,7 +89,7 @@ $.ajax({
     return $('body').append("AJAX Error: " + textStatus);
   },
   success: function(data, textStatus, jqXHR) {
-    var Searcher;
+    var GridDisplay, Searcher;
     Searcher = function(year, pos) {
       var i, j, len, ref, results, thing;
       ref = data.info;
@@ -117,6 +117,23 @@ $.ajax({
       }
       return results;
     };
+    GridDisplay = function(art, artist, album, year) {
+      var $showAllContainer, content, i, j, len, ref, thing;
+      $showAllContainer = $('<div>', {
+        id: 'show-all-container'
+      });
+      $('#main-content').prepend($showAllContainer);
+      content = '';
+      ref = data.info;
+      for (i = j = 0, len = ref.length; j < len; i = ++j) {
+        thing = ref[i];
+        if (data.info[i].year === year) {
+          content += '<div class="item"> <img src="images/thumbs/' + data.info[i].image + '.jpg" srcset="images/thumbs/' + data.info[i].image + '.jpg 1x, images/' + data.info[i].image + '.jpg 2x"> <span class="meta">' + data.info[i].artist + ' - ' + data.info[i].album + '</span> </div>';
+        }
+      }
+      $showAllContainer.html(content);
+      return console.log(content);
+    };
     $('#positions').find('li').click(function() {
       var dataID;
       dataID = $(this).attr("data-id");
@@ -140,6 +157,10 @@ $.ajax({
         $(this).addClass('active');
         return resetToOne();
       }
+    });
+    $('#show-all').click(function() {
+      showAll = true;
+      return GridDisplay('welcome-to-fazoland', 'G Herbo', 'is dead', chosenYear);
     });
     return document.onkeydown = function(e) {
       if (e.keyCode === 38 && currentPos > 1) {
