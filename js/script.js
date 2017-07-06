@@ -1,4 +1,4 @@
-var Faders, chosenPos, chosenYear, currentPos, currentYear, fadeOutcomplete, resetToOne;
+var Faders, chosenPos, chosenYear, currentPos, currentYear, fadeOutcomplete, resetToOne, showAll;
 
 chosenYear = 1;
 
@@ -9,6 +9,8 @@ chosenPos = 1;
 currentPos = 1;
 
 fadeOutcomplete = false;
+
+showAll = false;
 
 Faders = function(div, item) {
   if (div === 'selected-year') {

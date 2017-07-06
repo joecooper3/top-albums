@@ -115,27 +115,38 @@ body {
     padding: 50px 0 0;
     margin: 0 130px 0 0;
     flex-flow: column nowrap;
+    position: relative;
+    left: 0;
+    transition: 0.5s left ease-in;
+
     li {
       position: relative;
       left: -20px;
       padding: 10px 20px 10px 40px;
       margin: 5px 0;
       transition: 0.2s;
-      transition: 0.5s left;
 
       &:hover {
         left: 0;
       }
     }
+
     .active {
       background-color: $blue2;
       left: 0;
     }
   }
+
   ul.asleep {
-    li {
-      left: -100px;
-    }
+    left: -100px;
+  }
+
+  #show-all {
+    background-color: $mywhite;
+    font-family: TheinLight;
+    color: $myblue;
+    text-align: center;
+    text-transform: lowercase;
   }
 }
 
@@ -162,6 +173,7 @@ body {
 
 #album-art {
   max-width: 600px;
+
   p {
     font-size: 22px;
     line-height: 30px;
@@ -174,12 +186,18 @@ body {
   color: $myblue;
   margin: 20px 0;
 }
+
 #player-container {
-  margin: 40px 0 100px 0;
+  margin: 40px 0 100px;
   max-width: 600px;
   text-align: center;
 }
-#spotify, #soundcloud, #bandcamp, #youtube, #datpiff {
+
+#bandcamp,
+#datpiff,
+#soundcloud,
+#spotify,
+#youtube {
   a {
     font-family: 'TheinReg';
     padding: 15px;
@@ -189,44 +207,90 @@ body {
     transition: 0.3s;
   }
 }
+
 #spotify {
   a {
     background-color: #6AE368;
   }
+
   a:hover {
     background-color: #46D546;
   }
 }
+
 #soundcloud {
   a {
     background-color: #ff7700;
   }
+
   a:hover {
     background-color: #ff993f;
   }
 }
+
 #bandcamp {
   a {
     background-color: #639AA9;
   }
+
   a:hover {
     background-color: #3F7D8E;
   }
 }
+
 #youtube {
   a {
     background-color: #c4302b;
   }
+
   a:hover {
     background-color: #922320;
   }
 }
+
 #datpiff {
   a {
     background-color: #2B2B2D;
   }
+
   a:hover {
     background-color: #4F4F53;
+  }
+}
+
+#show-all-container {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 135px;
+
+  .item {
+    flex: 1 1 210px;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    img {
+      opacity: 0;
+      max-width: 100%;
+      transition: 0.25s;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+    .image-container {
+
+    }
+  }
+
+  .meta {
+    opacity: 1;
+    transition: 0.3s ease;
+    background-color: $mywhite;
+    color: $myblue;
+    font-family: theinMed;
+    font-size: 20px;
+    display: block;
+    padding: 10px 15px;
+    z-index: 59;
   }
 }
 

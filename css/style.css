@@ -480,22 +480,31 @@ body {
 #positions ul {
   padding: 50px 0 0;
   margin: 0 130px 0 0;
-  flex-flow: column nowrap; }
+  flex-flow: column nowrap;
+  position: relative;
+  left: 0;
+  transition: 0.5s left ease-in; }
   #positions ul li {
     position: relative;
     left: -20px;
     padding: 10px 20px 10px 40px;
     margin: 5px 0;
-    transition: 0.2s;
-    transition: 0.5s left; }
+    transition: 0.2s; }
     #positions ul li:hover {
       left: 0; }
   #positions ul .active {
     background-color: #002B55;
     left: 0; }
 
-#positions ul.asleep li {
+#positions ul.asleep {
   left: -100px; }
+
+#positions #show-all {
+  background-color: #FCFCFC;
+  font-family: TheinLight;
+  color: #0C3CB5;
+  text-align: center;
+  text-transform: lowercase; }
 
 #main-content {
   margin: 0 20px;
@@ -526,11 +535,15 @@ body {
   margin: 20px 0; }
 
 #player-container {
-  margin: 40px 0 100px 0;
+  margin: 40px 0 100px;
   max-width: 600px;
   text-align: center; }
 
-#spotify a, #soundcloud a, #bandcamp a, #youtube a, #datpiff a {
+#bandcamp a,
+#datpiff a,
+#soundcloud a,
+#spotify a,
+#youtube a {
   font-family: 'TheinReg';
   padding: 15px;
   border-radius: 30px;
@@ -567,6 +580,33 @@ body {
 
 #datpiff a:hover {
   background-color: #4F4F53; }
+
+#show-all-container {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 135px; }
+  #show-all-container .item {
+    flex: 1 1 210px;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box; }
+    #show-all-container .item img {
+      opacity: 0;
+      max-width: 100%;
+      transition: 0.25s;
+      overflow: hidden;
+      box-sizing: border-box; }
+  #show-all-container .meta {
+    opacity: 1;
+    transition: 0.3s ease;
+    background-color: #FCFCFC;
+    color: #0C3CB5;
+    font-family: theinMed;
+    font-size: 20px;
+    display: block;
+    padding: 10px 15px;
+    z-index: 59; }
 
 h1 {
   font-family: 'Playfair Display', serif;

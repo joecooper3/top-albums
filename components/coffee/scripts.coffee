@@ -3,6 +3,7 @@ currentYear = 1
 chosenPos = 1
 currentPos = 1
 fadeOutcomplete = false
+showAll = false
 
 Faders = (div, item) ->
   if div is 'selected-year'
