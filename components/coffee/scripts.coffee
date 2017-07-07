@@ -119,17 +119,18 @@ $.ajax
     $('#show-all').click ->
       GridDisplay(chosenYear)
       showAll = true
+      $('#positions').find('li').removeClass('active')
       hideMost()
 
     document.onkeydown = (e) ->
       #up key
-      if e.keyCode is 38 && currentPos > 1
+      if e.keyCode is 38 && currentPos > 1 && showAll is false
         $('#positions').find('li').removeClass('active')
         currentPos--
         $('#positions').find('li:nth-child('+currentPos+')').addClass('active')
         Searcher(currentYear,currentPos)
       #down key
-      if e.keyCode is 40 && currentPos < 10
+      if e.keyCode is 40 && currentPos < 10 && showAll is false
         $('#positions').find('li').removeClass('active')
         currentPos++
         $('#positions').find('li:nth-child('+currentPos+')').addClass('active')
@@ -139,14 +140,22 @@ $.ajax
          $('#years').find('li').removeClass('active')
          currentYear++
          $('#years').find('[data-id="'+currentYear+'"]').addClass('active')
-         resetToOne()
-         Searcher(currentYear,1)
+         if showAll is true
+           GridDisplay(currentYear)
+           Faders('selected-year',currentYear)
+          if showAll is false
+           resetToOne()
+           Searcher(currentYear,1)
          chosenYear++
        #right key
-       if e.keyCode is 39 && currentYear > 2011
+       if e.keyCode is 39 && currentYear > 2010
           $('#years').find('li').removeClass('active')
           currentYear--
           $('#years').find('[data-id="'+currentYear+'"]').addClass('active')
-          resetToOne()
-          Searcher(currentYear,1)
+          if showAll is true
+            GridDisplay(currentYear)
+            Faders('selected-year',currentYear)
+          if showAll is false
+            resetToOne()
+            Searcher(currentYear,1)
           chosenYear--

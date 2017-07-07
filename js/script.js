@@ -174,16 +174,17 @@ $.ajax({
     $('#show-all').click(function() {
       GridDisplay(chosenYear);
       showAll = true;
+      $('#positions').find('li').removeClass('active');
       return hideMost();
     });
     return document.onkeydown = function(e) {
-      if (e.keyCode === 38 && currentPos > 1) {
+      if (e.keyCode === 38 && currentPos > 1 && showAll === false) {
         $('#positions').find('li').removeClass('active');
         currentPos--;
         $('#positions').find('li:nth-child(' + currentPos + ')').addClass('active');
         Searcher(currentYear, currentPos);
       }
-      if (e.keyCode === 40 && currentPos < 10) {
+      if (e.keyCode === 40 && currentPos < 10 && showAll === false) {
         $('#positions').find('li').removeClass('active');
         currentPos++;
         $('#positions').find('li:nth-child(' + currentPos + ')').addClass('active');
@@ -193,16 +194,28 @@ $.ajax({
         $('#years').find('li').removeClass('active');
         currentYear++;
         $('#years').find('[data-id="' + currentYear + '"]').addClass('active');
-        resetToOne();
-        Searcher(currentYear, 1);
+        if (showAll === true) {
+          GridDisplay(currentYear);
+          Faders('selected-year', currentYear);
+        }
+        if (showAll === false) {
+          resetToOne();
+          Searcher(currentYear, 1);
+        }
         chosenYear++;
       }
-      if (e.keyCode === 39 && currentYear > 2011) {
+      if (e.keyCode === 39 && currentYear > 2010) {
         $('#years').find('li').removeClass('active');
         currentYear--;
         $('#years').find('[data-id="' + currentYear + '"]').addClass('active');
-        resetToOne();
-        Searcher(currentYear, 1);
+        if (showAll === true) {
+          GridDisplay(currentYear);
+          Faders('selected-year', currentYear);
+        }
+        if (showAll === false) {
+          resetToOne();
+          Searcher(currentYear, 1);
+        }
         return chosenYear--;
       }
     };
