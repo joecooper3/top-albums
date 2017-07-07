@@ -1,4 +1,4 @@
-var Faders, chosenPos, chosenYear, currentPos, currentYear, fadeOutcomplete, resetToOne, showAll;
+var Faders, chosenPos, chosenYear, currentPos, currentYear, fadeOutcomplete, hideMost, resetToOne, showAll;
 
 chosenYear = 1;
 
@@ -82,6 +82,10 @@ resetToOne = function() {
   return $('#first-pos').addClass('active');
 };
 
+hideMost = function() {
+  return $('#rank-number, #name-and-artist, #album-art, #genres, #player-container').fadeOut();
+};
+
 $.ajax({
   url: "data.json",
   dataType: "json",
@@ -117,12 +121,16 @@ $.ajax({
       }
       return results;
     };
-    GridDisplay = function(art, artist, album, year) {
+    GridDisplay = function(year) {
       var $showAllContainer, content, i, j, len, ref, thing;
-      $showAllContainer = $('<div>', {
-        id: 'show-all-container'
-      });
-      $('#main-content').prepend($showAllContainer);
+      if (showAll === false) {
+        $showAllContainer = $('<div>', {
+          id: 'show-all-container'
+        });
+        $('#main-content').prepend($showAllContainer);
+      } else {
+        $showAllContainer = $('#show-all-container');
+      }
       content = '';
       ref = data.info;
       for (i = j = 0, len = ref.length; j < len; i = ++j) {
@@ -131,8 +139,7 @@ $.ajax({
           content += '<div class="item"> <img src="images/thumbs/' + data.info[i].image + '.jpg" srcset="images/thumbs/' + data.info[i].image + '.jpg 1x, images/' + data.info[i].image + '.jpg 2x"> <span class="meta">' + data.info[i].artist + ' - ' + data.info[i].album + '</span> </div>';
         }
       }
-      $showAllContainer.html(content);
-      return console.log(content);
+      return $showAllContainer.html(content);
     };
     $('#positions').find('li').click(function() {
       var dataID;
@@ -151,7 +158,13 @@ $.ajax({
         $('#positions').find('ul').removeClass('asleep');
       }
       if (chosenYear !== currentYear) {
-        Searcher(chosenYear, 1);
+        if (showAll === false) {
+          Searcher(chosenYear, 1);
+        }
+        if (showAll === true) {
+          GridDisplay(chosenYear);
+          Faders('selected-year', chosenYear);
+        }
         currentYear = chosenYear;
         $('#years').find('li').removeClass('active');
         $(this).addClass('active');
@@ -159,8 +172,9 @@ $.ajax({
       }
     });
     $('#show-all').click(function() {
+      GridDisplay(chosenYear);
       showAll = true;
-      return GridDisplay('welcome-to-fazoland', 'G Herbo', 'is dead', chosenYear);
+      return hideMost();
     });
     return document.onkeydown = function(e) {
       if (e.keyCode === 38 && currentPos > 1) {

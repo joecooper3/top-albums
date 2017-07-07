@@ -50,6 +50,9 @@ resetToOne = ->
   $('#positions').find('li').removeClass('active')
   $('#first-pos').addClass('active')
 
+hideMost = ->
+  $('#rank-number, #name-and-artist, #album-art, #genres, #player-container').fadeOut()
+
 $.ajax
   url: "data.json"
   dataType: "json"
@@ -72,9 +75,12 @@ $.ajax
             Faders('youtube',data.info[i].youtube)
             Faders('datpiff',data.info[i].datpiff)
 
-    GridDisplay = (art, artist, album, year) ->
-      $showAllContainer = $('<div>', {id: 'show-all-container'})
-      $('#main-content').prepend($showAllContainer)
+    GridDisplay = (year) ->
+      if showAll is false
+        $showAllContainer = $('<div>', {id: 'show-all-container'})
+        $('#main-content').prepend($showAllContainer)
+      else
+        $showAllContainer = $('#show-all-container')
       content = ''
       for thing, i in data.info
         if data.info[i].year is year
@@ -85,7 +91,6 @@ $.ajax
             <span class="meta">' + data.info[i].artist + ' - ' + data.info[i].album + '</span>
           </div>'
       $showAllContainer.html(content)
-      console.log content
 
     $('#positions').find('li').click ->
       dataID = $(this).attr("data-id")
@@ -101,15 +106,20 @@ $.ajax
       if currentYear = 1
         $('#positions').find('ul').removeClass('asleep')
       if chosenYear != currentYear
-        Searcher(chosenYear,1)
+        if showAll is false
+          Searcher(chosenYear,1)
+        if showAll is true
+          GridDisplay(chosenYear)
+          Faders('selected-year',chosenYear)
         currentYear = chosenYear
         $('#years').find('li').removeClass('active')
         $(this).addClass('active')
         resetToOne()
 
     $('#show-all').click ->
+      GridDisplay(chosenYear)
       showAll = true
-      GridDisplay('welcome-to-fazoland','G Herbo','is dead', chosenYear)
+      hideMost()
 
     document.onkeydown = (e) ->
       #up key
