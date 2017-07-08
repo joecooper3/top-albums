@@ -504,7 +504,19 @@ body {
   font-family: TheinLight;
   color: #0C3CB5;
   text-align: center;
-  text-transform: lowercase; }
+  text-transform: lowercase;
+  margin: 5px 0 0 0; }
+
+#positions .blue-line {
+  height: 7px;
+  background-color: #0C3CB5;
+  position: relative;
+  left: -100px;
+  transition: 0.5s left ease-in; }
+
+#positions .blue-line.active {
+  left: 0;
+  background-color: #0C3CB5; }
 
 #main-content {
   margin: 0 20px;

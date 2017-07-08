@@ -114,12 +114,15 @@ $.ajax
         currentYear = chosenYear
         $('#years').find('li').removeClass('active')
         $(this).addClass('active')
-        resetToOne()
+        if showAll is false
+          resetToOne()
 
     $('#show-all').click ->
       GridDisplay(chosenYear)
       showAll = true
       $('#positions').find('li').removeClass('active')
+      $('#show-all').addClass('active').delay(600).queue ->
+        $('.blue-line').addClass('active')
       hideMost()
 
     document.onkeydown = (e) ->

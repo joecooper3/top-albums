@@ -168,13 +168,18 @@ $.ajax({
         currentYear = chosenYear;
         $('#years').find('li').removeClass('active');
         $(this).addClass('active');
-        return resetToOne();
+        if (showAll === false) {
+          return resetToOne();
+        }
       }
     });
     $('#show-all').click(function() {
       GridDisplay(chosenYear);
       showAll = true;
       $('#positions').find('li').removeClass('active');
+      $('#show-all').addClass('active').delay(600).queue(function() {
+        return $('.blue-line').addClass('active');
+      });
       return hideMost();
     });
     return document.onkeydown = function(e) {
