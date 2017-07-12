@@ -621,12 +621,38 @@ p {
     overflow: hidden;
     box-sizing: border-box;
     max-width: 250px; }
-    #show-all-container .item img {
-      opacity: 1;
-      max-width: 100%;
-      transition: 0.25s;
-      overflow: hidden;
-      box-sizing: border-box; }
+    #show-all-container .item .image-container {
+      position: relative; }
+      #show-all-container .item .image-container img {
+        opacity: 1;
+        max-width: 100%;
+        transition: 0.25s;
+        overflow: hidden;
+        box-sizing: border-box; }
+      #show-all-container .item .image-container .meta-hover {
+        position: absolute;
+        display: flex;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        background: rgba(255, 255, 255, 0.7);
+        transition: 0.7s;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer; }
+        #show-all-container .item .image-container .meta-hover .text {
+          font-size: 100px;
+          font-family: 'Playfair Display';
+          font-weight: 700;
+          position: relative;
+          color: #0C3CB5;
+          margin-bottom: 35px; }
+        #show-all-container .item .image-container .meta-hover:hover {
+          opacity: 1; }
   #show-all-container .meta {
     opacity: 1;
     transition: 0.3s ease;
@@ -634,6 +660,4 @@ p {
     color: #0C3CB5;
     font-family: theinMed;
     font-size: 20px;
-    display: block;
-    padding: 10px 15px;
-    z-index: 59; }
+    padding: 10px 15px; }

@@ -45,13 +45,20 @@ Faders = (div, item) ->
       $('#'+div).dequeue()
       $('#'+div).delay(150).animate({opacity:1})
 
-resetToOne = ->
+resetToOne = (status) ->
   chosenPos = currentPos = 1
-  $('#positions').find('li').removeClass('active')
-  $('#first-pos').addClass('active')
+  if showAll is false
+    $('#positions').find('li').removeClass('active')
+    $('#first-pos').addClass('active')
 
 hideMost = ->
   $('#rank-number, #name-and-artist, #album-art, #genres, #player-container').fadeOut()
+
+showMost = ->
+  $('#rank-number, #name-and-artist, #album-art, #genres, #player-container').fadeIn()
+  $('#show-all-container').fadeOut().remove()
+  $('#show-all, .blue-line').removeClass('active')
+
 
 $.ajax
   url: "data.json"
@@ -61,6 +68,7 @@ $.ajax
   success: (data, textStatus, jqXHR) ->
 
     Searcher = (year, pos) ->
+      console.log 'SEARCHER ' + year + ' ' + pos
       for thing, i in data.info
         if data.info[i].year is year
           if data.info[i].rank is pos
@@ -78,27 +86,35 @@ $.ajax
     GridDisplay = (year) ->
       if showAll is false
         $showAllContainer = $('<div>', {id: 'show-all-container'})
-        $('#main-content').prepend($showAllContainer)
+        $($showAllContainer).hide().prependTo('#main-content').fadeIn()
       else
         $showAllContainer = $('#show-all-container')
       content = ''
       for thing, i in data.info
         if data.info[i].year is year
           content += '<div class="item">
+            <div class="image-container">
             <img src="images/thumbs/' + data.info[i].image + '.jpg"
             srcset="images/thumbs/' + data.info[i].image + '.jpg 1x,
             images/' + data.info[i].image + '.jpg 2x">
-            <span class="meta">' + data.info[i].artist + ' - ' + data.info[i].album + '</span>
+            <div class="meta-hover">
+            <div class="text">' + data.info[i].rank + '</div>
+            </div>
+            </div>
+            <div class="meta">' + data.info[i].artist + ' - ' + data.info[i].album + '</div>
           </div>'
       $showAllContainer.html(content)
 
-    $('#positions').find('li').click ->
+    $('#positions').find('li:not(#show-all)').click ->
+      console.log 'Positions click triggered'
       dataID = $(this).attr("data-id")
       chosenPos = parseInt(dataID, 10)
       Searcher(currentYear,chosenPos)
       currentPos = chosenPos
       $('#positions').find('li').removeClass('active')
       $(this).addClass('active')
+      if showAll is true
+        showMost()
 
     $('#years').find('li').click ->
       dataID = $(this).attr("data-id")
@@ -114,16 +130,23 @@ $.ajax
         currentYear = chosenYear
         $('#years').find('li').removeClass('active')
         $(this).addClass('active')
-        if showAll is false
-          resetToOne()
+        resetToOne()
 
     $('#show-all').click ->
-      GridDisplay(chosenYear)
-      showAll = true
-      $('#positions').find('li').removeClass('active')
-      $('#show-all').addClass('active').delay(600).queue ->
-        $('.blue-line').addClass('active')
-      hideMost()
+      if showAll is false
+        GridDisplay(chosenYear)
+        showAll = true
+        $('#positions').find('li').removeClass('active')
+        $('#show-all').addClass('active').delay(400).queue ->
+          $('.blue-line').addClass('active')
+          $(this).dequeue()
+         hideMost()
+      else if showAll is true
+        showAll = false
+        showMost()
+        console.log 'currentYear: ' + currentYear + ' currentPos: ' + currentPos
+        Searcher(currentYear, currentPos)
+
 
     document.onkeydown = (e) ->
       #up key

@@ -1,4 +1,4 @@
-var Faders, chosenPos, chosenYear, currentPos, currentYear, fadeOutcomplete, hideMost, resetToOne, showAll;
+var Faders, chosenPos, chosenYear, currentPos, currentYear, fadeOutcomplete, hideMost, resetToOne, showAll, showMost;
 
 chosenYear = 1;
 
@@ -76,14 +76,22 @@ Faders = function(div, item) {
   }
 };
 
-resetToOne = function() {
+resetToOne = function(status) {
   chosenPos = currentPos = 1;
-  $('#positions').find('li').removeClass('active');
-  return $('#first-pos').addClass('active');
+  if (showAll === false) {
+    $('#positions').find('li').removeClass('active');
+    return $('#first-pos').addClass('active');
+  }
 };
 
 hideMost = function() {
   return $('#rank-number, #name-and-artist, #album-art, #genres, #player-container').fadeOut();
+};
+
+showMost = function() {
+  $('#rank-number, #name-and-artist, #album-art, #genres, #player-container').fadeIn();
+  $('#show-all-container').fadeOut().remove();
+  return $('#show-all, .blue-line').removeClass('active');
 };
 
 $.ajax({
@@ -96,6 +104,7 @@ $.ajax({
     var GridDisplay, Searcher;
     Searcher = function(year, pos) {
       var i, j, len, ref, results, thing;
+      console.log('SEARCHER ' + year + ' ' + pos);
       ref = data.info;
       results = [];
       for (i = j = 0, len = ref.length; j < len; i = ++j) {
@@ -127,7 +136,7 @@ $.ajax({
         $showAllContainer = $('<div>', {
           id: 'show-all-container'
         });
-        $('#main-content').prepend($showAllContainer);
+        $($showAllContainer).hide().prependTo('#main-content').fadeIn();
       } else {
         $showAllContainer = $('#show-all-container');
       }
@@ -136,19 +145,23 @@ $.ajax({
       for (i = j = 0, len = ref.length; j < len; i = ++j) {
         thing = ref[i];
         if (data.info[i].year === year) {
-          content += '<div class="item"> <img src="images/thumbs/' + data.info[i].image + '.jpg" srcset="images/thumbs/' + data.info[i].image + '.jpg 1x, images/' + data.info[i].image + '.jpg 2x"> <span class="meta">' + data.info[i].artist + ' - ' + data.info[i].album + '</span> </div>';
+          content += '<div class="item"> <div class="image-container"> <img src="images/thumbs/' + data.info[i].image + '.jpg" srcset="images/thumbs/' + data.info[i].image + '.jpg 1x, images/' + data.info[i].image + '.jpg 2x"> <div class="meta-hover"> <div class="text">' + data.info[i].rank + '</div> </div> </div> <div class="meta">' + data.info[i].artist + ' - ' + data.info[i].album + '</div> </div>';
         }
       }
       return $showAllContainer.html(content);
     };
-    $('#positions').find('li').click(function() {
+    $('#positions').find('li:not(#show-all)').click(function() {
       var dataID;
+      console.log('Positions click triggered');
       dataID = $(this).attr("data-id");
       chosenPos = parseInt(dataID, 10);
       Searcher(currentYear, chosenPos);
       currentPos = chosenPos;
       $('#positions').find('li').removeClass('active');
-      return $(this).addClass('active');
+      $(this).addClass('active');
+      if (showAll === true) {
+        return showMost();
+      }
     });
     $('#years').find('li').click(function() {
       var dataID;
@@ -168,19 +181,25 @@ $.ajax({
         currentYear = chosenYear;
         $('#years').find('li').removeClass('active');
         $(this).addClass('active');
-        if (showAll === false) {
-          return resetToOne();
-        }
+        return resetToOne();
       }
     });
     $('#show-all').click(function() {
-      GridDisplay(chosenYear);
-      showAll = true;
-      $('#positions').find('li').removeClass('active');
-      $('#show-all').addClass('active').delay(600).queue(function() {
-        return $('.blue-line').addClass('active');
-      });
-      return hideMost();
+      if (showAll === false) {
+        GridDisplay(chosenYear);
+        showAll = true;
+        $('#positions').find('li').removeClass('active');
+        $('#show-all').addClass('active').delay(400).queue(function() {
+          $('.blue-line').addClass('active');
+          return $(this).dequeue();
+        });
+        return hideMost();
+      } else if (showAll === true) {
+        showAll = false;
+        showMost();
+        console.log('currentYear: ' + currentYear + ' currentPos: ' + currentPos);
+        return Searcher(currentYear, currentPos);
+      }
     });
     return document.onkeydown = function(e) {
       if (e.keyCode === 38 && currentPos > 1 && showAll === false) {

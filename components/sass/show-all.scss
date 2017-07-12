@@ -13,15 +13,47 @@ $myblue: #0C3CB5;
     overflow: hidden;
     box-sizing: border-box;
     max-width: 250px;
-    img {
-      opacity: 1;
-      max-width: 100%;
-      transition: 0.25s;
-      overflow: hidden;
-      box-sizing: border-box;
-    }
-    .image-container {
 
+    .image-container {
+      position: relative;
+
+      img {
+        opacity: 1;
+        max-width: 100%;
+        transition: 0.25s;
+        overflow: hidden;
+        box-sizing: border-box;
+      }
+
+      .meta-hover {
+        position: absolute;
+        display: flex;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        background: rgba(255,255,255,0.7);
+        transition: 0.7s;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        .text {
+          font-size: 100px;
+          font-family: 'Playfair Display';
+          font-weight: 700;
+          position: relative;
+          color: $myblue;
+          margin-bottom: 35px;
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+      }
     }
   }
 
@@ -32,8 +64,6 @@ $myblue: #0C3CB5;
     color: $myblue;
     font-family: theinMed;
     font-size: 20px;
-    display: block;
     padding: 10px 15px;
-    z-index: 59;
   }
 }
