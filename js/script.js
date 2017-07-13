@@ -145,7 +145,7 @@ $.ajax({
       for (i = j = 0, len = ref.length; j < len; i = ++j) {
         thing = ref[i];
         if (data.info[i].year === year) {
-          content += '<div class="item"> <div class="image-container"> <img src="images/thumbs/' + data.info[i].image + '.jpg" srcset="images/thumbs/' + data.info[i].image + '.jpg 1x, images/' + data.info[i].image + '.jpg 2x"> <div class="meta-hover"> <div class="text">' + data.info[i].rank + '</div> </div> </div> <div class="meta">' + data.info[i].artist + ' - ' + data.info[i].album + '</div> </div>';
+          content += '<div class="item"> <div class="image-container"> <img src="images/thumbs/' + data.info[i].image + '.jpg" srcset="images/thumbs/' + data.info[i].image + '.jpg 1x, images/' + data.info[i].image + '.jpg 2x"> <div class="meta-hover" data-id="' + data.info[i].rank + '"> <div class="text">' + data.info[i].rank + '</div> </div> </div> <div class="meta">' + data.info[i].artist + ' - ' + data.info[i].album + '</div> </div>';
         }
       }
       return $showAllContainer.html(content);
@@ -200,6 +200,23 @@ $.ajax({
         console.log('currentYear: ' + currentYear + ' currentPos: ' + currentPos);
         return Searcher(currentYear, currentPos);
       }
+    });
+    $('#main-content').on('click', '.image-container', function() {
+      var dataID;
+      console.log('meta-hover triggered');
+      dataID = $(this).find('.meta-hover').attr("data-id");
+      chosenPos = parseInt(dataID, 10);
+      Searcher(currentYear, chosenPos);
+      currentPos = chosenPos;
+      $('#positions').find('li').removeClass('active');
+      $(this).addClass('active');
+      return showMost();
+    });
+    $('.meta-hover').click(function() {
+      return console.log('damn');
+    });
+    $('.text').click(function() {
+      return console.log('HELLLLP');
     });
     return document.onkeydown = function(e) {
       if (e.keyCode === 38 && currentPos > 1 && showAll === false) {

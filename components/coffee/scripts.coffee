@@ -97,7 +97,7 @@ $.ajax
             <img src="images/thumbs/' + data.info[i].image + '.jpg"
             srcset="images/thumbs/' + data.info[i].image + '.jpg 1x,
             images/' + data.info[i].image + '.jpg 2x">
-            <div class="meta-hover">
+            <div class="meta-hover" data-id="' + data.info[i].rank + '">
             <div class="text">' + data.info[i].rank + '</div>
             </div>
             </div>
@@ -146,6 +146,22 @@ $.ajax
         showMost()
         console.log 'currentYear: ' + currentYear + ' currentPos: ' + currentPos
         Searcher(currentYear, currentPos)
+
+    $('#main-content').on 'click', '.image-container', ->
+      console.log 'meta-hover triggered'
+      dataID = $(this).find('.meta-hover').attr("data-id")
+      chosenPos = parseInt(dataID, 10)
+      Searcher(currentYear,chosenPos)
+      currentPos = chosenPos
+      $('#positions').find('li').removeClass('active')
+      $(this).addClass('active')
+      showMost()
+
+    $('.meta-hover').click ->
+      console.log 'damn'
+
+    $('.text').click ->
+      console.log 'HELLLLP'
 
 
     document.onkeydown = (e) ->
