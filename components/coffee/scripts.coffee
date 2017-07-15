@@ -148,20 +148,14 @@ $.ajax
         Searcher(currentYear, currentPos)
 
     $('#main-content').on 'click', '.image-container', ->
-      console.log 'meta-hover triggered'
       dataID = $(this).find('.meta-hover').attr("data-id")
       chosenPos = parseInt(dataID, 10)
       Searcher(currentYear,chosenPos)
       currentPos = chosenPos
       $('#positions').find('li').removeClass('active')
-      $(this).addClass('active')
+      $('#positions').find('[data-id="' + chosenPos + '"]').addClass('active')
       showMost()
-
-    $('.meta-hover').click ->
-      console.log 'damn'
-
-    $('.text').click ->
-      console.log 'HELLLLP'
+      showAll = false
 
 
     document.onkeydown = (e) ->

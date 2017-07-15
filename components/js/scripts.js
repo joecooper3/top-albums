@@ -203,20 +203,14 @@ $.ajax({
     });
     $('#main-content').on('click', '.image-container', function() {
       var dataID;
-      console.log('meta-hover triggered');
       dataID = $(this).find('.meta-hover').attr("data-id");
       chosenPos = parseInt(dataID, 10);
       Searcher(currentYear, chosenPos);
       currentPos = chosenPos;
       $('#positions').find('li').removeClass('active');
-      $(this).addClass('active');
-      return showMost();
-    });
-    $('.meta-hover').click(function() {
-      return console.log('damn');
-    });
-    $('.text').click(function() {
-      return console.log('HELLLLP');
+      $('#positions').find('[data-id="' + chosenPos + '"]').addClass('active');
+      showMost();
+      return showAll = false;
     });
     return document.onkeydown = function(e) {
       if (e.keyCode === 38 && currentPos > 1 && showAll === false) {
