@@ -1,4 +1,4 @@
-var Faders, chosenPos, chosenYear, currentPos, currentYear, fadeOutcomplete, hideMost, resetToOne, showAll, showMost;
+var Faders, chosenPos, chosenYear, currentPos, currentYear, customFade, fadeOutcomplete, hideMost, resetToOne, showAll, showMost;
 
 chosenYear = 1;
 
@@ -76,6 +76,18 @@ Faders = function(div, item) {
   }
 };
 
+customFade = function(target, content) {
+  return target.animate({
+    opacity: 0
+  }, 200).queue(function() {
+    target.html(content);
+    target.dequeue();
+    return target.delay(150).animate({
+      opacity: 1
+    });
+  });
+};
+
 resetToOne = function(status) {
   chosenPos = currentPos = 1;
   if (showAll === false) {
@@ -139,6 +151,7 @@ $.ajax({
         $($showAllContainer).hide().prependTo('#main-content').fadeIn();
       } else {
         $showAllContainer = $('#show-all-container');
+        $showAllContainer.fadeOut();
       }
       content = '';
       ref = data.info;
@@ -148,7 +161,10 @@ $.ajax({
           content += '<div class="item"> <div class="image-container"> <img src="images/thumbs/' + data.info[i].image + '.jpg" srcset="images/thumbs/' + data.info[i].image + '.jpg 1x, images/' + data.info[i].image + '.jpg 2x"> <div class="meta-hover" data-id="' + data.info[i].rank + '"> <div class="text">' + data.info[i].rank + '</div> </div> </div> <div class="meta">' + data.info[i].artist + ' - ' + data.info[i].album + '</div> </div>';
         }
       }
-      return $showAllContainer.html(content);
+      $showAllContainer.html(content);
+      if (showAll === true) {
+        return $showAllContainer.fadeIn();
+      }
     };
     $('#positions').find('li:not(#show-all)').click(function() {
       var dataID;
@@ -160,7 +176,8 @@ $.ajax({
       $('#positions').find('li').removeClass('active');
       $(this).addClass('active');
       if (showAll === true) {
-        return showMost();
+        showMost();
+        return showAll = false;
       }
     });
     $('#years').find('li').click(function() {

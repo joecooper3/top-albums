@@ -45,6 +45,12 @@ Faders = (div, item) ->
       $('#'+div).dequeue()
       $('#'+div).delay(150).animate({opacity:1})
 
+customFade = (target, content) ->
+  target.animate({opacity:0},200).queue ->
+    target.html(content)
+    target.dequeue()
+    target.delay(150).animate({opacity:1})
+
 resetToOne = (status) ->
   chosenPos = currentPos = 1
   if showAll is false
@@ -89,6 +95,7 @@ $.ajax
         $($showAllContainer).hide().prependTo('#main-content').fadeIn()
       else
         $showAllContainer = $('#show-all-container')
+        $showAllContainer.fadeOut()
       content = ''
       for thing, i in data.info
         if data.info[i].year is year
@@ -104,6 +111,8 @@ $.ajax
             <div class="meta">' + data.info[i].artist + ' - ' + data.info[i].album + '</div>
           </div>'
       $showAllContainer.html(content)
+      if showAll is true
+        $showAllContainer.fadeIn()
 
     $('#positions').find('li:not(#show-all)').click ->
       console.log 'Positions click triggered'
@@ -115,6 +124,7 @@ $.ajax
       $(this).addClass('active')
       if showAll is true
         showMost()
+        showAll = false
 
     $('#years').find('li').click ->
       dataID = $(this).attr("data-id")
