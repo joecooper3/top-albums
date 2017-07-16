@@ -13,6 +13,7 @@ fadeOutcomplete = false;
 showAll = false;
 
 Faders = function(div, item) {
+  var $div;
   if (div === 'selected-year') {
     if (chosenYear !== currentYear) {
       return $('#' + div).animate({
@@ -64,15 +65,8 @@ Faders = function(div, item) {
         item = '';
       }
     }
-    return $('#' + div).animate({
-      opacity: 0
-    }, 200).queue(function() {
-      $('#' + div).html(item);
-      $('#' + div).dequeue();
-      return $('#' + div).delay(150).animate({
-        opacity: 1
-      });
-    });
+    $div = $('#' + div);
+    return customFade($div, item);
   }
 };
 
@@ -151,7 +145,6 @@ $.ajax({
         $($showAllContainer).hide().prependTo('#main-content').fadeIn();
       } else {
         $showAllContainer = $('#show-all-container');
-        $showAllContainer.fadeOut();
       }
       content = '';
       ref = data.info;
@@ -161,14 +154,15 @@ $.ajax({
           content += '<div class="item"> <div class="image-container"> <img src="images/thumbs/' + data.info[i].image + '.jpg" srcset="images/thumbs/' + data.info[i].image + '.jpg 1x, images/' + data.info[i].image + '.jpg 2x"> <div class="meta-hover" data-id="' + data.info[i].rank + '"> <div class="text">' + data.info[i].rank + '</div> </div> </div> <div class="meta">' + data.info[i].artist + ' - ' + data.info[i].album + '</div> </div>';
         }
       }
-      $showAllContainer.html(content);
       if (showAll === true) {
-        return $showAllContainer.fadeIn();
+        console.log($showAllContainer);
+        return customFade($showAllContainer, content);
+      } else {
+        return $showAllContainer.html(content);
       }
     };
     $('#positions').find('li:not(#show-all)').click(function() {
       var dataID;
-      console.log('Positions click triggered');
       dataID = $(this).attr("data-id");
       chosenPos = parseInt(dataID, 10);
       Searcher(currentYear, chosenPos);
@@ -214,7 +208,6 @@ $.ajax({
       } else if (showAll === true) {
         showAll = false;
         showMost();
-        console.log('currentYear: ' + currentYear + ' currentPos: ' + currentPos);
         return Searcher(currentYear, currentPos);
       }
     });

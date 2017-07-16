@@ -40,10 +40,8 @@ Faders = (div, item) ->
        item = '<a href="' + item + '" target="_blank">Listen on DatPiff</a>'
       else
        item = ''
-    $('#'+div).animate({opacity:0},200).queue ->
-      $('#'+div).html(item)
-      $('#'+div).dequeue()
-      $('#'+div).delay(150).animate({opacity:1})
+    $div = $('#'+div)
+    customFade($div, item)
 
 customFade = (target, content) ->
   target.animate({opacity:0},200).queue ->
@@ -95,7 +93,6 @@ $.ajax
         $($showAllContainer).hide().prependTo('#main-content').fadeIn()
       else
         $showAllContainer = $('#show-all-container')
-        $showAllContainer.fadeOut()
       content = ''
       for thing, i in data.info
         if data.info[i].year is year
@@ -110,12 +107,13 @@ $.ajax
             </div>
             <div class="meta">' + data.info[i].artist + ' - ' + data.info[i].album + '</div>
           </div>'
-      $showAllContainer.html(content)
       if showAll is true
-        $showAllContainer.fadeIn()
+        console.log $showAllContainer
+        customFade($showAllContainer, content)
+      else
+        $showAllContainer.html(content)
 
     $('#positions').find('li:not(#show-all)').click ->
-      console.log 'Positions click triggered'
       dataID = $(this).attr("data-id")
       chosenPos = parseInt(dataID, 10)
       Searcher(currentYear,chosenPos)
@@ -154,7 +152,6 @@ $.ajax
       else if showAll is true
         showAll = false
         showMost()
-        console.log 'currentYear: ' + currentYear + ' currentPos: ' + currentPos
         Searcher(currentYear, currentPos)
 
     $('#main-content').on 'click', '.image-container', ->
