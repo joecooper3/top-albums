@@ -505,7 +505,7 @@ body {
   color: #0C3CB5;
   text-align: center;
   text-transform: lowercase;
-  margin: 5px 0 0 0; }
+  margin: 5px 0 0; }
 
 #positions .blue-line {
   height: 7px;
@@ -539,6 +539,11 @@ body {
   #album-art p {
     font-size: 22px;
     line-height: 30px; }
+  #album-art .means {
+    text-align: center;
+    padding-top: 30px; }
+    #album-art .means img {
+      max-width: 275px; }
 
 #genres {
   font-family: 'TheinBold', serif;
