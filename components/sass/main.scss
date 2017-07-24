@@ -147,16 +147,17 @@ body {
     color: $myblue;
     text-align: center;
     text-transform: lowercase;
-    margin: 5px 0 0 0;
+    margin: 5px 0 0;
   }
 
   .blue-line {
     height: 7px;
     background-color: $myblue;
     position: relative;
-    left:-100px;
+    left: -100px;
     transition: 0.5s left ease-in;
   }
+
   .blue-line.active {
     left: 0;
     background-color: $myblue;
@@ -193,6 +194,14 @@ body {
   p {
     font-size: 22px;
     line-height: 30px;
+  }
+
+  .means {
+    text-align: center;
+    padding-top: 30px;
+    img {
+      max-width: 275px;
+    }
   }
 }
 

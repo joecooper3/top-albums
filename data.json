@@ -398,21 +398,21 @@
     },
     {
       "year": 2012,
-      "rank": 6,
-      "artist": "Future of the Left",
-      "album": "The Plot Against Common Sense",
-      "image": "the-plot-against-common-sense",
-      "genres": "Post-Hardcore",
-      "spotify": "spotify:album:07t1mMckO61tMce67UI2VH"
-    },
-    {
-      "year": 2012,
       "rank": 5,
       "artist": "Cloud Nothings",
       "album": "Attack on Memory",
       "image": "attack-on-memory",
       "genres": "Post-Hardcore, Indie Rock",
       "spotify": "spotify:album:1JgpvdsSfE94eZzYBk6ph9"
+    },
+    {
+      "year": 2012,
+      "rank": 6,
+      "artist": "Future of the Left",
+      "album": "The Plot Against Common Sense",
+      "image": "the-plot-against-common-sense",
+      "genres": "Post-Hardcore",
+      "spotify": "spotify:album:07t1mMckO61tMce67UI2VH"
     },
     {
       "year": 2012,
@@ -506,21 +506,21 @@
     },
     {
       "year": 2011,
-      "rank": 8,
-      "artist": "Clams Casino",
-      "album": "Instrumentals",
-      "image": "instrumentals",
-      "genres": "Instrumental Hip Hop, Cloud Rap",
-      "soundcloud": "https://soundcloud.com/clammyclams/sets/set-title"
-    },
-    {
-      "year": 2011,
       "rank": 7,
       "artist": "Real Estate",
       "album": "Days",
       "image": "days",
       "genres": "Indie Pop, Indie Rock, Jangle Pop",
       "spotify": "spotify:album:7e6bDoD8VD0549bu69UTEF"
+    },
+    {
+      "year": 2011,
+      "rank": 8,
+      "artist": "Clams Casino",
+      "album": "Instrumentals",
+      "image": "instrumentals",
+      "genres": "Instrumental Hip Hop, Cloud Rap",
+      "soundcloud": "https://soundcloud.com/clammyclams/sets/set-title"
     },
     {
       "year": 2011,
