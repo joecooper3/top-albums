@@ -18,8 +18,8 @@ Faders = function(div, item) {
     if (chosenYear !== currentYear) {
       return $('#' + div).animate({
         opacity: 0
-      }, 400).queue(function() {
-        $('#' + div).html(item);
+      }, 300).queue(function() {
+        $('#' + div).delay(200).html(item);
         $('#' + div).delay(1000).animate({
           opacity: 1
         });
@@ -110,7 +110,6 @@ $.ajax({
     var GridDisplay, Searcher;
     Searcher = function(year, pos) {
       var i, j, len, ref, results, thing;
-      console.log('SEARCHER ' + year + ' ' + pos);
       ref = data.info;
       results = [];
       for (i = j = 0, len = ref.length; j < len; i = ++j) {
@@ -155,7 +154,6 @@ $.ajax({
         }
       }
       if (showAll === true) {
-        console.log($showAllContainer);
         return customFade($showAllContainer, content);
       } else {
         return $showAllContainer.html(content);
@@ -175,12 +173,18 @@ $.ajax({
       }
     });
     $('#years').find('li').click(function() {
-      var dataID;
+      var $ranknumber, dataID;
       dataID = $(this).attr("data-id");
       chosenYear = parseInt(dataID, 10);
-      if (currentYear = 1) {
+      if (currentYear === 1) {
         $('#positions').find('ul').removeClass('asleep');
-        $('#rank-number').removeClass('asleep');
+        $('#selected-year').removeClass('asleep');
+        $ranknumber = $('<div>', {
+          id: 'rank-number'
+        }).delay(400).queue(function() {
+          $($ranknumber).hide().text('1').prependTo('#main-content').fadeIn();
+          return $(this).dequeue();
+        });
       }
       if (chosenYear !== currentYear) {
         if (showAll === false) {

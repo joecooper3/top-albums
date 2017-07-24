@@ -56,6 +56,10 @@ body {
   color: #FCF0EF;
   right: 0;
   top: 50px;
+  transition: 0.3s;
+  &.asleep {
+    opacity: 0;
+  }
 }
 
 #container {
@@ -179,9 +183,6 @@ body {
   font-size: 100px;
   font-family: 'Playfair Display', serif;
   color: $myblue;
-  &.asleep {
-    display: none;
-  }
 }
 
 #rank-number:before {

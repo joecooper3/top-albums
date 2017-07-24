@@ -8,8 +8,8 @@ showAll = false
 Faders = (div, item) ->
   if div is 'selected-year'
     if chosenYear != currentYear
-      $('#'+div).animate({opacity:0},400).queue ->
-        $('#'+div).html(item)
+      $('#'+div).animate({opacity:0},300).queue ->
+        $('#'+div).delay(200).html(item)
         $('#'+div).delay(1000).animate({opacity:1})
         $('#'+div).dequeue()
   else
@@ -72,7 +72,6 @@ $.ajax
   success: (data, textStatus, jqXHR) ->
 
     Searcher = (year, pos) ->
-      console.log 'SEARCHER ' + year + ' ' + pos
       for thing, i in data.info
         if data.info[i].year is year
           if data.info[i].rank is pos
@@ -108,7 +107,6 @@ $.ajax
             <div class="meta">' + data.info[i].artist + ' - ' + data.info[i].album + '</div>
           </div>'
       if showAll is true
-        console.log $showAllContainer
         customFade($showAllContainer, content)
       else
         $showAllContainer.html(content)
@@ -127,9 +125,12 @@ $.ajax
     $('#years').find('li').click ->
       dataID = $(this).attr("data-id")
       chosenYear = parseInt(dataID, 10)
-      if currentYear = 1
+      if currentYear is 1
         $('#positions').find('ul').removeClass('asleep')
-        $('#rank-number').removeClass('asleep')
+        $('#selected-year').removeClass('asleep')
+        $ranknumber = $('<div>', {id: 'rank-number'}).delay(400).queue ->
+          $($ranknumber).hide().text('1').prependTo('#main-content').fadeIn()
+          $(this).dequeue()
       if chosenYear != currentYear
         if showAll is false
           Searcher(chosenYear,1)
