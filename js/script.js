@@ -180,6 +180,7 @@ $.ajax({
       chosenYear = parseInt(dataID, 10);
       if (currentYear = 1) {
         $('#positions').find('ul').removeClass('asleep');
+        $('#rank-number').removeClass('asleep');
       }
       if (chosenYear !== currentYear) {
         if (showAll === false) {

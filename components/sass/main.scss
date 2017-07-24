@@ -178,6 +178,9 @@ body {
   font-size: 100px;
   font-family: 'Playfair Display', serif;
   color: $myblue;
+  &.asleep {
+    display: none;
+  }
 }
 
 #rank-number:before {

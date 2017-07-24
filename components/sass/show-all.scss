@@ -5,6 +5,7 @@ $myblue: #0C3CB5;
   display: flex;
   flex-flow: row wrap;
   margin-top: 135px;
+  justify-content: center;
 
   .item {
     flex: 1 1 210px;
@@ -12,7 +13,7 @@ $myblue: #0C3CB5;
     position: relative;
     overflow: hidden;
     box-sizing: border-box;
-    max-width: 250px;
+    max-width: 300px;
 
     .image-container {
       position: relative;
