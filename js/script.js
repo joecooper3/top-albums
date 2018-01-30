@@ -235,7 +235,7 @@ $.ajax({
         $('#positions').find('li:nth-child(' + currentPos + ')').addClass('active');
         Searcher(currentYear, currentPos);
       }
-      if (e.keyCode === 37 && currentYear < 2016) {
+      if (e.keyCode === 37 && currentYear < 2017) {
         $('#years').find('li').removeClass('active');
         currentYear++;
         $('#years').find('[data-id="' + currentYear + '"]').addClass('active');

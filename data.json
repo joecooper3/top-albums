@@ -1,22 +1,112 @@
 {
   "info": [
     {
-      "year": 2016,
+      "year": 2017,
       "rank": 1,
-      "artist": "Car Seat Headrest",
-      "album": "Teens of Denial",
-      "image": "teens-of-denial",
+      "artist": "Blanck Mass",
+      "album": "World Eater",
+      "image": "world-eater",
+      "genres": "Electro-Industrial, Post-Industrial",
+      "spotify": "spotify:album:6WElx5zuqd2CYiyea4oEc8"
+    },
+    {
+      "year": 2017,
+      "rank": 2,
+      "artist": "Bradley Hathaway",
+      "album": "Flesh Eater",
+      "image": "flesh-eater",
+      "genres": "Singer/Songwriter, Spoken Word, Indie Folk",
+      "spotify": "spotify:album:4bQYttIwfqLajJGqyMgmJY"
+    },
+    {
+      "year": 2017,
+      "rank": 3,
+      "artist": "Meat Wave",
+      "album": "The Incessant",
+      "image": "the-incessant",
+      "genres": "Garage Punk",
+      "spotify": "spotify:album:214A9Uw8dUIANr86QvWRHr"
+    },
+    {
+      "year": 2017,
+      "rank": 4,
+      "artist": "Mount Eerie",
+      "album": "A Crow Looked at Me",
+      "image": "a-crow-looked-at-me",
+      "genres": "Singer/Songwriter, Indie Folk, Contemporary Folk",
+      "spotify" : "spotify:album:5p64XgvFREt1P6mC7Xl6XN"
+    },
+    {
+      "year": 2017,
+      "rank": 5,
+      "artist": "Young Jesus",
+      "album": "s/t",
+      "image": "young-jesus",
       "genres": "Indie Rock",
-      "spotify": "spotify:album:26DseQO366JfXwIP7dIgQj"
+      "spotify": "spotify:album:6hvUeXYl4dxRWt3UpQSdis"
+    },
+    {
+      "year": 2017,
+      "rank": 6,
+      "artist": "G Perico",
+      "album": "All Blue",
+      "image": "all-blue",
+      "genres": "Gangsta Rap, West Coast Hip Hop",
+      "spotify": "spotify:album:2eLBR21knTJPe5PzhtZKX2"
+    },
+    {
+      "year": 2017,
+      "rank": 7,
+      "artist": "Sudan Archives",
+      "album": "Sudan Archives",
+      "image": "sudan-archives",
+      "genres": "Folktronica, Art Pop",
+      "spotify": "spotify:album:6Vs7bJcWtuyriFn0ol16lX"
+    },
+    {
+      "year": 2017,
+      "rank": 8,
+      "artist": "Angles 9",
+      "album": "Disappeared Behind the Sun",
+      "image": "disappeared-behind-the-sun",
+      "genres": "Experimental Big Band",
+      "spotify": "spotify:album:0waUO5aFvi6QRglJrEzZht"
+    },
+    {
+      "year": 2017,
+      "rank": 9,
+      "artist": "James Holden & the Animal Spirits",
+      "album": "The Animal Spirits",
+      "image": "the-animal-spirits",
+      "genres": "Progressive Electronic",
+      "spotify": "spotify:album:25DyIBkqzuy4YD5BgJEgm0"
+    },
+    {
+      "year": 2017,
+      "rank": 10,
+      "artist": "Arca",
+      "album": "Arca",
+      "image": "arca",
+      "genres": "Art Pop, Glitch Pop",
+      "spotify": "spotify:album:1MQO4j8QExVgmnplbIodEU"
     },
     {
       "year": 2016,
-      "rank": 2,
+      "rank": 1,
       "artist": "Frank Ocean",
       "album": "Blonde",
       "image": "blonde",
       "genres": "Alternative R&B, Neo-Soul",
       "spotify": "spotify:album:3mH6qwIy9crq0I9YQbOuDf"
+    },
+    {
+      "year": 2016,
+      "rank": 2,
+      "artist": "Car Seat Headrest",
+      "album": "Teens of Denial",
+      "image": "teens-of-denial",
+      "genres": "Indie Rock",
+      "spotify": "spotify:album:26DseQO366JfXwIP7dIgQj"
     },
     {
       "year": 2016,
@@ -273,20 +363,20 @@
     {
       "year": 2013,
       "rank": 1,
-      "artist": "Oneohtrix Point Never",
-      "album": "R Plus Seven",
-      "image": "r-plus-seven",
-      "genres": "Progressive Electronic",
-      "spotify": "spotify:album:68PRq4zj7YXMwiUq6FNGvR"
-    },
-    {
-      "year": 2013,
-      "rank": 2,
       "artist": "Car Seat Headrest",
       "album": "Nervous Young Man",
       "image": "nervous-young-man",
       "genres": "Lo-Fi Indie, Singer/Songwriter",
       "spotify": "spotify:album:3So2z7sZog8eBEWgm1zvHC"
+    },
+    {
+      "year": 2013,
+      "rank": 2,
+      "artist": "Oneohtrix Point Never",
+      "album": "R Plus Seven",
+      "image": "r-plus-seven",
+      "genres": "Progressive Electronic",
+      "spotify": "spotify:album:68PRq4zj7YXMwiUq6FNGvR"
     },
     {
       "year": 2013,
