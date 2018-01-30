@@ -438,7 +438,10 @@ body {
   z-index: -2;
   color: #FCF0EF;
   right: 0;
-  top: 50px; }
+  top: 50px;
+  transition: 0.3s; }
+  #selected-year.asleep {
+    opacity: 0; }
 
 #container {
   display: flex;
@@ -618,14 +621,15 @@ p {
 #show-all-container {
   display: flex;
   flex-flow: row wrap;
-  margin-top: 135px; }
+  margin-top: 135px;
+  justify-content: center; }
   #show-all-container .item {
     flex: 1 1 210px;
     margin: 10px;
     position: relative;
     overflow: hidden;
     box-sizing: border-box;
-    max-width: 250px; }
+    max-width: 300px; }
     #show-all-container .item .image-container {
       position: relative; }
       #show-all-container .item .image-container img {
